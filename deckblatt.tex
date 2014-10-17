@@ -1,0 +1,44 @@
+\documentclass{include/protokollclass}
+% Main File - Based on protokollclass.cls
+% ---------------------------------------------------------------------------------------
+% Further files in folder ./misc/ :
+%  - cmds.tex (for macros and additional commands)
+%  - data.tex (für Angaben zum Praktikumsprotokoll)
+%  - kitlogo.pdf (for titlepage)
+%  - lit.bib (bibtex bibliography database)
+%  - titlepage.tex (for layout of titelpage)
+% DIES IST EINE REDUZIERTE VERSION DER VORLAGE, UM EIN LEERES DECKBLATT ZU ERZEUGEN
+
+
+
+
+
+% um die Titelseite per PDF-reader auszufüllen. Vorgefertigte Daten können unter 'misc/data.tex' modifiziert werden.
+\setboolean{forminput}{true}
+% um die Anmerkungen zu den Textfeldern anzeigen zu lassen
+\setboolean{showannotations}{true}
+% um das Ausfüllen der Textfelder zu verhindern
+\setboolean{emptytextfields}{true}
+
+
+
+
+
+%% ------------------------
+%% |    Main Document     |
+%% ------------------------
+\begin{document}
+	% english oder ngerman (new german für neue deutsche Rechtschreibung statt german)
+	\selectlanguage{ngerman}
+	
+	% PDF setup
+	\hypersetup
+	{
+		pdfauthor={Fakultät für Physik, KIT},
+		pdftitle={Deckblatt zum Anfängerpraktikum},
+		pdfsubject={Deckblatt für Versuchsprotokolle der physikalischen Anfängerpraktika der Fakultät für Physik, KIT.},
+		pdfkeywords={kit,physik,praktikum,protokoll}
+	}
+	
+	\input{include/titlepage}
+\end{document}

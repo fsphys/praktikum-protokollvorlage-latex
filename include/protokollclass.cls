@@ -1,0 +1,357 @@
+%% LaTeX2e class for diploma theses
+%% Based on wissdoc.cls by Roland Bless, 1996-2001
+%% bless@telematik.informatik.uni-karlsruhe.de
+%%
+%% Adapted by: Timo Rohrberg, 2009
+%% timo.rohrberg@student.kit.edu
+%%
+%% Additions by: Thorsten Haberecht, IPD - Chair Prof. Bhm, 2010
+%% thorsten.haberecht@kit.edu
+%%
+%% Further modified as Bachelor Thesis by: Philipp Verpoort, 2014
+%%
+%% Usage for Anfängerpraktikum, Fakultät f. Physik, KIT by: Fachschaft Physik KIT, 2014
+%% fachschaft@physik.kit.edu
+
+
+
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{include/protokollclass}
+\LoadClass[a4paper,11pt,titlepage,openany]{scrbook}
+
+
+
+
+
+%% -------------------------------
+%% |          Packages           |
+%% -------------------------------
+\usepackage[utf8]{inputenc}			% for using utf8 characters (äöüß)
+\usepackage[T1]{fontenc}			% for correct font encoding (you can't search for non-ascii chars in pdf otherwise)
+\usepackage{lmodern}				% the font used by T1 font encoding
+\usepackage[	protrusion=true, expansion,
+		tracking, kerning,
+		spacing]{microtype}		% microtype writing style. 
+\microtypecontext{spacing=nonfrench}		% option for scrbook to allow for microtype->nonfrenchspacing
+						% for info on nonfrenchspacing: en.wikipedia.org/wiki/History_of_sentence_spacing#French_and_English_spacing
+
+\usepackage{xcolor}				% used for some coloring commands
+\definecolor{kitcolor}{rgb}{0 0.61 0.50}	% color is defined here and later used for several definitions
+
+\usepackage[english,ngerman]{babel}		% babel language styles. you may add languages, if need to be.
+\usepackage[fixlanguage]{babelbib}		% use babel bibtex. fixlanguage = don't switch language between bib items
+%\usepackage{cite}				% if you prefer bibtex without babel
+
+\usepackage{amsmath}				% lots of math packages
+\usepackage{amssymb}				% ... even more math packages
+\usepackage{mathtools}				% ...
+\usepackage{bbm}				% blackboard style fonts. You may prefer the provided \mathbbm{R} to ordinary \mathbb{R}.
+\usepackage{upgreek}				% use $\uppi$ etc.
+\usepackage{nicefrac}				% use \nicefrac{1}{2} for inline text, if you want
+\usepackage{siunitx}				% package for units. Use \si{\ampere} or \SI{0.3}{\angstrom}.
+
+\usepackage{vmargin}				% Adjust margins in a simple way (is used below).
+\usepackage{fancyhdr}				% Define simple page headings (is used below).
+
+\usepackage[pdftex]{graphicx}			% including images
+\usepackage[	normal,
+		font={small,color=black},
+		labelfont=bf,
+		margin=2em]{caption}		% create graphics/tabular captions
+\usepackage{subcaption}				% create subcaptions for subpictures
+
+\usepackage[absolute,overlay]{textpos}		% used for titlepage
+\usepackage{tikz}				% used for titlepage, but may be useful for other stuff, too.
+\usepackage{ifthen}				% for some control sequences in this class
+\usepackage[fit,breakall]{truncate}		% used for creating textfields on titlepage
+\usepackage{etoolbox}				% necessary to update page numbering for different chapters
+\usepackage{xstring}				% used for creating substring out of \appendixname
+\usepackage{multicol}				% used for titlepage. Usefull for other stuff, too.
+
+\DeclareGraphicsRule{*}{mps}{*}{}		% enables compiling images with pdf-latex
+\DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg,.jpeg,.mps} % different image extensions used
+
+\usepackage[	raiselinks=true,
+		bookmarks=true,
+		bookmarksopenlevel=1,
+		bookmarksopen=true,
+		bookmarksnumbered=true,
+		hyperindex=true,
+		plainpages=false,
+		pdfpagelabels=true,
+		pdfborder={0 0 0.5},
+		colorlinks=false,	
+		linkbordercolor=kitcolor,   
+		citebordercolor=kitcolor]{hyperref}	% enables hyperlinks in document. also includes url package for \url{...}
+
+
+
+
+
+%% -------------------------------
+%% |        Declarations         |
+%% -------------------------------
+\input{include/cmds}
+\newcommand{\blankpage}{\clearpage{\pagestyle{empty}\cleardoublepage}}
+
+\input{data}
+\newcommand{\namea}{\vornamea\ \nachnamea}
+\newcommand{\nameb}{\vornameb\ \nachnameb}
+\StrRight{\praktikum}{1}[\praktikumteil]
+
+
+
+
+
+%% -------------------------------
+%% |         PDF - Setup         |
+%% -------------------------------
+%% This information will appear embed into the PDF file, but will not be printed anywhere
+\hypersetup
+{
+	pdfauthor={\namea, \nameb},
+	pdftitle={Praktikumsprotokoll zum Versuch \versuch},
+	pdfsubject={Praktikumsprotokoll zum Versuch \versuch~(\praktikum-\versuchsnr) des physikalischen Anfängerpraktikums Teil \praktikumteil\ der Fakultät für Physik, \semester, KIT. Versuchsgruppe: \wochentag-\gruppennr},
+	pdfkeywords={kit,physik,praktikum,protokoll,\versuch,\nachnamea,\nachnameb}
+}
+
+
+
+
+
+%% -------------------------------
+%% |      Globale Settings       |
+%% -------------------------------
+\setcounter{secnumdepth}{3}				% Numbering also for \subsubsections
+\setcounter{tocdepth}{3}				% Register \subsubsections in content directory
+
+\setpapersize{A4}
+\setmarginsrb{3cm}{1cm}{3cm}{1cm}{6mm}{7mm}{5mm}{15mm}	%{leftmargin}{topmargin}{rightmargin}{bottommargin}{headheight}{headsep}{footheight}{footskip}
+\setlength{\marginparwidth}{1.5cm}			% for todos to be positioned correctly
+
+\parindent 0cm                    			% Do not indent beginning of paragraph
+\parskip 1.5ex plus0.5ex minus0.5ex			% Margin between paragraphs
+
+
+
+
+
+%% -------------------------------
+%% |      Style of captions      |
+%% -------------------------------
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+\newcommand{\chapterheadfont}{}
+
+\renewcommand{\chaptername}{}
+
+\renewcommand{\section}{%
+\@startsection{section}%
+{1}		% Structure level
+{0mm}	% Indention
+{2ex plus 1ex minus 1ex}			% Pre-Margin
+{0.5ex plus 0.5ex minus 0.5ex}		% Post-Margin
+{\chapterheadfont\large\bfseries}	% Style
+}
+\renewcommand{\subsection}{%
+\@startsection{subsection}%
+{2}		% Structure level
+{0mm}	% Indention
+{1.5ex plus 1ex minus 0.5ex}		% Pre-Margin
+{0.3ex plus 0.3ex minus 0.3ex}		% Post-Margin
+{\chapterheadfont\large\bfseries}	% Style
+}
+\renewcommand{\subsubsection}{%
+\@startsection{subsubsection}%
+{3}		% Structure level
+{0mm}	% Indention
+{1.5ex plus 1ex minus 0.5ex}			% Pre-Margin
+{0.2ex plus 0.2ex minus 0.2ex}			% Post-Margin
+{\chapterheadfont\normalsize\bfseries}	% Style
+}
+\renewcommand{\paragraph}{%
+\@startsection{paragraph}%
+{4}		% Structure level
+{0mm}	% Indention
+{1.3ex plus 1ex minus 0.3ex}			% Pre-Margin
+{0.2ex plus 0.2ex minus 0.2ex}			% Post-Margin
+{\chapterheadfont\normalsize\bfseries}	% Style
+}
+\renewcommand{\subparagraph}{%
+\@startsection{subparagraph}%
+{5}		% Structure level
+{0mm}	% Indention
+{1ex plus 1ex minus 0.2ex}				% Pre-Margin
+{0.1ex plus 0.1ex minus 0.1ex}			% Post-Margin
+{\chapterheadfont\normalsize\bfseries}	% Style
+}
+
+
+
+
+
+%% ---------------------------------
+%% |   Style of chapter captions   |
+%% ---------------------------------
+\newlength{\chapnolen}
+\newlength{\chapparlen}
+\newsavebox{\chapno}
+\renewcommand{\@makechapterhead}[1]{
+  \vspace*{0.1\textheight}
+  \vskip 15\p@
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \savebox{\chapno}{\chapterheadfont\huge\bfseries \thechapter.}
+        \settowidth{\chapnolen}{\usebox{\chapno}}
+        \parbox[t]{\chapnolen}{\usebox{\chapno}}\nobreak\leavevmode
+      \fi
+    \fi
+    \interlinepenalty\@MM
+    \setlength{\chapparlen}{\textwidth}
+    \addtolength{\chapparlen}{-1.0\chapnolen}
+    \addtolength{\chapparlen}{-2ex}
+    \leavevmode\nobreak
+    \parbox[t]{\chapparlen}{\raggedright\chapterheadfont\huge \bfseries #1\par\nobreak}
+    \vskip 30\p@
+  }}
+
+\renewcommand{\@makeschapterhead}[1]{
+  \vspace*{50\p@}
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \chapterheadfont \huge \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }
+}
+
+
+
+
+
+%% ---------------------------------
+%% |  Style of content directory   |
+%% ---------------------------------
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{{\pdfbookmark{\contentsname}{\contentsname}\chapterheadfont\oldtableofcontents}}
+\let\@olddottedtocline\@dottedtocline
+\renewcommand{\@dottedtocline}[5]{\@olddottedtocline{#1}{#2}{#3}{#4}{\chapterheadfont #5}}
+
+
+
+
+
+%% ----------------------------------------
+%% |   Style of appendix and mainmatter   |
+%% ----------------------------------------
+\newboolean{chapWiseNumb}
+\setboolean{chapWiseNumb}{false}
+
+\newcommand{\MainMatter}
+{
+	\mainmatter
+	\pagestyle{fancy}
+	\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ ##1}{}}
+	\lhead[\thepage]{\leftmark}\chead[]{}\rhead[Praktikumsprotokoll zum Versuch \versuch]{\thepage}
+	\lfoot{}\cfoot{}\rfoot{}
+	\ifthenelse{\boolean{chapWiseNumb}}
+	{
+		\renewcommand{\thepage}{\arabic{chapter}-\arabic{page}}
+	}{}
+}
+
+\newcommand{\Appendix}
+{
+	\par
+	\appendix
+	\setcounter{section}{0}
+	\setcounter{subsection}{0}
+	\setcounter{figure}{0}
+	\setcounter{equation}{0}
+	\renewcommand\thesection{\Alph{section}}
+	\renewcommand\thefigure{\Alph{section}.\arabic{figure}}
+	\renewcommand\thetable{\Alph{section}.\arabic{table}}
+	\renewcommand\theequation{\Alph{section}.\arabic{equation}}
+	\numberwithin{equation}{section}
+	\lhead[\thepage]{Appendix}
+	\ifthenelse{\boolean{chapWiseNumb}}
+	{
+		\StrMid{\appendixname}{1}{3}[\appendixnameshort]
+		\renewcommand{\thepage}{\appendixnameshort.-\arabic{page}}
+	}{}
+}
+
+\newcommand{\TheBibliography}
+{
+	\clearpage
+	\thispagestyle{plain}
+	\ifthenelse{\boolean{chapWiseNumb}}
+	{
+		\StrMid{\bibname}{1}{3}[\bibnameshort]
+		\renewcommand{\thepage}{\bibnameshort.-\arabic{page}}
+	}{}
+}
+
+
+
+
+
+%% -------------------------------------
+%% |     Textfields for Titlepage      |
+%% -------------------------------------
+\newboolean{forminput}			% um die Titelseite per PDF-reader auszufüllen.
+\setboolean{forminput}{false}
+
+\newboolean{showannotations}		% um die Anmerkungen zu den Textfeldern anzeigen zu lassen.
+\setboolean{showannotations}{false}
+
+\newboolean{emptytextfields}		% um Seitenzahl in jedem Kapitel zu erneuern.
+\setboolean{emptytextfields}{false}
+
+\newcommand{\myFtextfield}[7]		% ausfüllbares TextFeld
+{
+  \begin{Form}
+    \renewcommand{\arraystretch}{0}
+    \begin{tabular}{@{}l@{}r@{}}
+      \begin{tabular}{@{}c@{}} \\[0.18cm] {#1}: \end{tabular} & \TextField[name={#7}, value={#2}, borderwidth=0, charsize={#4}, width=#3, maxlen={#6}]{}~~\\[0.2cm]
+      \\[2px]
+      \cline{2-2}
+      \\[2px]
+      \ifthenelse{\boolean{showannotations}}{& \multicolumn{1}{@{}r@{}}{\tiny {#5}}}{}
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+  \end{Form}
+}
+
+\newcommand{\myTtextfield}[5]		% festes Textfeld, das nicht per PDF-Reader ausgefüllt werden kann
+{
+  \renewcommand{\arraystretch}{0}
+  \begin{tabular}{@{}l@{}l@{}}
+      \begin{tabular}{@{}c@{}} \\[0.18cm] {#1}: \end{tabular} & \begin{tabular}{@{}c@{}} \\[0.1cm] \makebox[#3][l]{\truncate[]{#3}{~\fontfamily{\sfdefault}\fontsize{#4}{1cm}\selectfont ~#2}}~~\end{tabular}\\[0.2cm]
+      \\[2px]
+      \cline{2-2}
+      \\[2px]
+      \ifthenelse{\boolean{showannotations}}{& \multicolumn{1}{@{}r@{}}{\tiny {#5}}}{}
+    \end{tabular}
+  \renewcommand{\arraystretch}{1}
+}
+
+\AtBeginDocument
+{
+	\ifthenelse{\boolean{forminput}}
+	{
+		\ifthenelse{\boolean{emptytextfields}}
+		{
+			\newcommand{\mytextfield}[7]{\myFtextfield{#1}{}{#3}{#4}{#5}{#6}{#7}}
+		}
+		{
+			\newcommand{\mytextfield}[7]{\myFtextfield{#1}{#2}{#3}{#4}{#5}{#6}{#7}}
+		}
+	}
+	{
+		\newcommand{\mytextfield}[7]{\myTtextfield{#1}{#2}{#3}{#4}{#5}}
+	}
+}
+%% **** END OF CLASS ****

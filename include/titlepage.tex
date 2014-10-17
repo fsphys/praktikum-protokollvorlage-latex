@@ -1,0 +1,163 @@
+% Koordinaten für den Hintergrundrahmen
+\newcommand{\diameter}{20}
+\newcommand{\xone}{-15}
+\newcommand{\xtwo}{160}
+\newcommand{\yone}{15}
+\newcommand{\ytwo}{-253}
+
+\newcommand{\hoehea}{60}
+\newcommand{\hoeheb}{60}
+
+
+
+
+\begin{titlepage}
+	% Hintergrundrahmen
+	\begin{tikzpicture}[overlay]
+	\draw[color=gray]  
+			(\xone mm, \yone mm)
+	  -- (\xtwo mm, \yone mm)
+	arc (90:0:\diameter pt) 
+	  -- (\xtwo mm + \diameter pt , \ytwo mm) 
+		-- (\xone mm + \diameter pt , \ytwo mm)
+	arc (270:180:\diameter pt)
+		-- (\xone mm, \yone mm);
+	\end{tikzpicture}
+	
+	% KIT-Logo
+	\begin{textblock}{10}[0,0](4.5,2.5)
+		\includegraphics[width=.25\textwidth]{include/kitlogo.pdf}
+	\end{textblock}
+	\changefont{phv}{m}{n}	% helvetica
+	\begin{textblock}{10}[0,0](5.5,2.2)
+		\begin{flushright}
+			\Large FAKULTÄT FÜR PHYSIK\\Praktikum Klassische Physik
+		\end{flushright}
+	\end{textblock}
+	
+	\begin{textblock}{10}[0,0](4.2,3.1)
+		\begin{tikzpicture}[overlay]
+		\draw[color=gray]
+				(\xone mm + 5 mm, -12 mm)
+		  -- (\xtwo mm + \diameter pt - 5 mm, -12 mm);
+		\end{tikzpicture}
+	\end{textblock}
+	
+	\Large
+	% Zeile 1
+	\begin{textblock}{12}[0,0](3.85,3.9)
+		\mytextfield{Prak.}{\praktikum}{0.9cm}{17pt}{P1/P2}{2}{Praktikum}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](5.8,3.9)
+		\mytextfield{Semester}{\semester}{2.6cm}{17pt}{z.B. \glqq WS14/15\grqq\ oder \glqq SS15\grqq}{0}{Semester}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](9.8,3.9)
+		\mytextfield{Wochentag}{\wochentag}{1.3cm}{17pt}{Mo/Di/Mi/Do}{2}{Wochentag}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](13.15,3.9)
+		\mytextfield{Gruppennr.}{\gruppennr}{1.06cm}{17pt}{\#\#}{2}{Gruppennummer}
+	\end{textblock}
+	
+	% Zeile 2
+	\begin{textblock}{12}[0,0](3.85,4.5)
+		\mytextfield{Name}{\nachnamea}{6cm}{17pt}{}{0}{Name1}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](9.8,4.5)
+		\mytextfield{Vorname}{\vornamea}{6cm}{17pt}{}{0}{Vorname1}
+	\end{textblock}
+	
+	% Zeile 2
+	\begin{textblock}{12}[0,0](3.85,5.1)
+		\mytextfield{Name}{\nachnameb}{6cm}{17pt}{}{0}{Name2}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](9.8,5.1)
+		\mytextfield{Vorname}{\vornameb}{6cm}{17pt}{}{0}{Vorname2}
+	\end{textblock}
+	
+	% Zeile 4
+	\begin{textblock}{12}[0,0](3.85,6.1)
+		\mytextfield{Versuch}{\versuch\ (\praktikum-\versuchsnr)}{9.45cm}{14pt}{z.B. \glqq Galvanometer (P1-13)\grqq\ oder \glqq Mikrowellenoptik (P2-15)\grqq}{0}{Versuch}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](12.85,6.1)
+		\mytextfield{Fehlerrech.}{\fehlerrechnung}{1.46cm}{17pt}{Ja/Nein}{4}{Fehlerrechnung}
+	\end{textblock}
+	
+	% Zeile 5
+	\begin{textblock}{12}[0,0](3.85,6.7)
+		\mytextfield{Betreuer}{\betreuer}{7cm}{17pt}{}{0}{Betreuer}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](11.09,6.7)
+		\mytextfield{Durchgeführt am}{\durchgefuehrt}{2.53cm}{17pt}{TT.MM.JJ}{8}{Durchfuehrung}
+	\end{textblock}
+	
+	%querstrich
+	\begin{textblock}{20}[0,0](0,7.65)\tiny\centering
+		Wird vom Betreuer ausgefüllt.
+	\end{textblock}
+	\begin{tikzpicture}[overlay]
+	\draw[color=gray]
+			(\xone mm + 5 mm, -90 mm)
+	  -- (\xtwo mm + \diameter pt - 5 mm, -90 mm);
+	\end{tikzpicture}
+	
+	% Zeile 1
+	\begin{textblock}{12}[0,0](3.85,8.1)
+		\myTtextfield{1. Abgabe am}{}{2.5cm}{17pt}{}
+	\end{textblock}
+	
+	% Block 1
+	\begin{tikzpicture}[overlay]
+	\draw[color=gray]  
+			(\xone mm + 10 mm, -105 mm)
+	  -- (\xtwo mm + \diameter pt - 10 mm, -105 mm)
+	  -- (\xtwo mm + \diameter pt - 10 mm, -105 mm - \hoehea mm)
+	  -- (\xone mm + 10 mm, -105 mm - \hoehea mm)
+	  -- (\xone mm + 10 mm, -105 mm);
+	\end{tikzpicture}
+	\begin{textblock}{12}[0,0](4,8.9)
+		\myTtextfield{Rückgabe am}{}{2.5cm}{17pt}{}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](8.6,9)
+		Begründung:
+	\end{textblock}
+	
+	% Zeile 2
+	\begin{textblock}{12}[0,0](3.85,12.25)
+		\myTtextfield{2. Abgabe am}{}{2.5cm}{17pt}{}
+	\end{textblock}
+	
+	% Block 2
+	\begin{tikzpicture}[overlay]
+	\draw[color=gray]  
+			(\xone mm + 10 mm, -180 mm)
+	  -- (\xtwo mm + \diameter pt - 10 mm, -180 mm)
+	  -- (\xtwo mm + \diameter pt - 10 mm, -180 mm - \hoehea mm)
+	  -- (\xone mm + 10 mm, -180 mm - \hoehea mm)
+	  -- (\xone mm + 10 mm, -180 mm);
+	\end{tikzpicture}
+	\begin{textblock}{12}[0,0](4,13.2)
+		Ergebnis:~~~~+~~~/~~~0~~~/~~~-
+	\end{textblock}
+	\begin{textblock}{12}[0,0](9.5,13.2)
+		Fehlerrechnung:~~~Ja~~~/~~~Nein
+	\end{textblock}
+	\begin{textblock}{12}[0,0](4,13.6)
+		\myTtextfield{Datum}{}{2.5cm}{17pt}{}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](8.5,13.6)
+		\myTtextfield{Handzeichen}{}{5.5cm}{17pt}{}
+	\end{textblock}
+	\begin{textblock}{12}[0,0](4,14.2)\Large
+		Bemerkungen:
+	\end{textblock}
+	
+	
+	
+	% unterste Zeile über das KIT
+	\begin{textblock}{10}[0,0](4,16.8)
+		\tiny{KIT -- Universität des Landes Baden-Württemberg und nationales Forschungszentrum in der Helmholtz-Gemeinschaft}
+	\end{textblock}
+	\begin{textblock}{10}[0,0](14,16.75)
+		\large{\textbf{www.kit.edu}}
+	\end{textblock}
+\end{titlepage}

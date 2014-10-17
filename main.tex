@@ -1,0 +1,100 @@
+\documentclass{include/protokollclass}
+% Main File - Based on protokollclass.cls
+% ---------------------------------------------------------------------------------------
+% Further files in folder ./misc/ :
+%  - cmds.tex (for macros and additional commands)
+%  - data.tex (für Angaben zum Praktikumsprotokoll)
+%  - kitlogo.pdf (for titlepage)
+%  - lit.bib (bibtex bibliography database)
+%  - titlepage.tex (for layout of titelpage)
+
+
+
+
+
+%% --------------------------------
+%% | Settings for word separation |
+%% --------------------------------
+% Help for separation:
+% In german package the following hints are additionally available:
+% "- = Additional separation
+% "| = Suppress ligation and possible separation (e.g. Schaf"|fell)
+% "~ = Hyphenation without separation (e.g. bergauf und "~ab)
+% "= = Hyphenation with separation before and after
+% "" = Separation without a hyphenation (e.g. und/""oder)
+
+% Describe separation hints here:
+\hyphenation{
+über-nom-me-nen an-ge-ge-be-nen
+% Pro-to-koll-in-stan-zen
+% Ma-na-ge-ment  Netz-werk-ele-men-ten
+% Netz-werk Netz-werk-re-ser-vie-rung
+% Netz-werk-adap-ter Fein-ju-stier-ung
+% Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+% Kon-troll-in-stanz
+}
+
+
+
+
+
+% um die Titelseite per PDF-reader auszufüllen. Vorgefertigte Daten können unter 'misc/data.tex' modifiziert werden.
+%\setboolean{forminput}{true}
+% um die Anmerkungen zu den Textfeldern anzeigen zu lassen
+%\setboolean{showannotations}{true}
+% um Seitenzahl in jedem Kapitel zu erneuern
+%\pretocmd{\chapter}{\setcounter{page}{1}}{}{}
+% um Kapitelnummerierung in Seitenzahl anzuführen.
+% \setboolean{chapWiseNumb}{true}
+
+% english oder ngerman (new german für neue deutsche Rechtschreibung statt german)
+\selectlanguage{ngerman}
+
+
+
+
+
+%% ------------------------
+%% |    Main Document     |
+%% ------------------------
+\begin{document}
+	% Titelseite und ToC
+	\frontmatter \pagestyle{empty}
+	\input{include/titlepage} \clearpage
+
+	\tableofcontents\thispagestyle{empty}
+	
+	
+	
+	% eigentlicher Inhalt
+	\MainMatter
+	
+	\chapter{Vorbereitungen (von \namea)}
+	\input{./chap/chapter1.tex} \cleardoublepage
+	\chapter{Vorbereitungen (von \nameb)}
+	\input{./chap/chapter2.tex} \cleardoublepage
+	\chapter{Auswertung}
+	\input{./chap/chapter3.tex} \cleardoublepage
+	
+	% Anhang für mehr oder weniger interessante Rechnungen etc.
+	\Appendix
+	\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % damit der Anhang im ToC ohne Nummer erscheint. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
+	\input{./chap/appendix.tex} \cleardoublepage
+	
+	
+	
+	% BibTeX
+	\TheBibliography
+	\addcontentsline{toc}{chapter}{\bibname} % \bibname = Bibliography oder Literaturverzeichnis
+	
+	%%% BIBTEX
+	% Use if you want citations to appear even if they are not referenced to: \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
+	% \nocite{*}
+	\bibliographystyle{dcbib}
+	\bibliography{lit.bib}
+	
+	%%% THEBIBLIOGRAPHY
+	%\begin{thebibliography}{}
+	%	\bibitem{ident}Eintrag ins Literaturverzeichnis
+	%\end{thebibliography}
+\end{document}
