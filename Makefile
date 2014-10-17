@@ -4,7 +4,5 @@ main.pdf: main.tex lit.bib data.tex $(shell find chap -type f) $(shell find fig 
 	pdflatex main.tex
 	pdflatex main.tex
 
-deckblatt.pdf: deckblatt.tex lit.bib data.tex $(shell find chap -type f) $(shell find fig -type f) $(shell find tab -type f) $(shell find include -type f)
-
 clean:
 	rm *.aux *.log *.out *.bbl *.blg *.toc *.pdf
