@@ -1,4 +1,4 @@
-= Protokollvorlage für das physikalische Anfängerpraktikum am KIT =
+# Protokollvorlage für das physikalische Anfängerpraktikum am KIT
 
 The repository consists of three branches:
 * **master**: contains only the template.
@@ -7,7 +7,7 @@ The repository consists of three branches:
 
 The template is known to be compatible with TeXLive 2012 and 2014.
 
-== Use the template ==
+## Use the template
 
 First, obtain a copy of the template. You have multiple possibilities:
 * download a [snapshot of the template](https://github.com/fsphys/praktikum-protokollvorlage-latex/archive/master.zip) or
@@ -19,8 +19,8 @@ Compile on the command line using <code>make main.pdf</code> or your favorite La
 * <code>pdflatex main.tex</code>
 * <code>pdflatex main.tex</code>
 
-For detailed information on using the template, see the readme pdf linked above.
+For detailed information on using the template, see the [readme pdf](https://github.com/fsphys/praktikum-protokollvorlage-latex/blob/readme/main.pdf?raw=true).
 
-== Contribute to the template ==
+## Contribute to the template
 
-The preferred way is to fork the repository and send a pull request. You can send your contributions via mail to latexvorlage@fachschaft.physik.kit.edu
+The preferred way is to fork the repository and send a pull request. You can send your contributions via mail to latexvorlage@fachschaft.physik.kit.edu .
