@@ -60,8 +60,11 @@
 \begin{document}
 	% Titelseite und ToC
 	\frontmatter \pagestyle{empty}
-	\input{include/titlepage} \clearpage
-
+	\begin{titlepage}
+		\centering\Huge README zur Protokollvorlage
+	\end{titlepage}
+	\clearpage
+	
 	\tableofcontents\thispagestyle{empty}
 	
 	
@@ -69,17 +72,19 @@
 	% eigentlicher Inhalt
 	\MainMatter
 	
-	\chapter{Vorbereitungen (von \namea)}
-	\input{./chap/chapter1.tex} \cleardoublepage
-	\chapter{Vorbereitungen (von \nameb)}
-	\input{./chap/chapter2.tex} \cleardoublepage
-	\chapter{Auswertung}
-	\input{./chap/chapter3.tex} \cleardoublepage
+	\chapter{Einleitung}
+	\input{./chap/chapter1.tex}
+	\chapter{Über LaTeX}
+	\input{./chap/chapter2.tex}
+	\chapter{Über diese LaTeX-Vorlage}
+	\input{./chap/chapter3.tex}
+	\chapter{Nützliche Befehle}
+	\input{./chap/chapter4.tex}
 	
 	% Anhang für mehr oder weniger interessante Rechnungen etc.
-	\Appendix
-	\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % damit der Anhang im ToC ohne Nummer erscheint. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
-	\input{./chap/appendix.tex} \cleardoublepage
+	%\Appendix
+	%\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % damit der Anhang im ToC ohne Nummer erscheint. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
+	%\input{./chap/appendix.tex}
 	
 	
 	
@@ -95,6 +100,6 @@
 	
 	%%% THEBIBLIOGRAPHY
 	%\begin{thebibliography}{}
-	%	\bibitem{ident}Eintrag ins Literaturverzeichnis
+	%	\bibitem{ident}Manueller Eintrag ins Literaturverzeichnis
 	%\end{thebibliography}
 \end{document}
