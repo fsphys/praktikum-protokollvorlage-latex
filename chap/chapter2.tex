@@ -25,11 +25,14 @@ Es gibt im wesentlichen zwei Editoren, die sich für das Bearbeiten von TeX-Date
 
 Alternativ kann man \textit{texlive} installieren, die zurzeit umfangreichste LaTeX-Distribution. Infos zur Installation der aktuellen texlive Version findet man ebenfalls auf der offiziellen texlive Website: \url{https://www.tug.org/texlive/}. Einen Überblick über weitere Editoren speziell auch für Windows und Mac bietet Herr Dr. Poenicke auf seiner Seite zum ERA-Kurs: \url{http://comp.physik.kit.edu/Lehre/ERA/05_Latex/}.
 
-\subsection{Installation unter Mac}
-\todo{Installation Mac}
+\subsection{Installation unter Mac OS X}
+Unter Mac OS X gibt es ähnlich wie unter Linux mit \textit{TeX Live} mit \textit{MacTeX} eine sehr umfangreiche Distribution zur Verfügung und sogar auch eine abgespeckte Version, falls die SSD doch zu klein ist. Das $2.4$\,GB große \textit{pkg} für OS X ab 10.5 und sogar für noch ältere Versionen gibt es unter \url{https://www.tug.org/mactex/} immer aktuell. Ein \textit{pkg} zu installieren ist zwar aufwendiger als ein \textit{DMG} zu installieren, aber mit ein paar Klicks auch schnell geschehen. Natürlich gibt es für die Freunde des Terminals auch ein Homebrew-Cask mit Namen \textit{mactex}.
+
+Eine weiter auf \textit{TeX Live} basierende Lösung für OS X stellt \textit{TeXShop} (\url{http://pages.uoregon.edu/koch/texshop/}) dar. Dieser Editor bietet unter anderem eine Live-Vorschau, ist jedoch von der Benutzeroberfläche nicht jedermanns Sache. 
+Als Alternative bietet sich hier natürlich auch wieder \textit{TeXMaker} an.
 
 \subsection{Installation unter Linux}
-\textit{texlive} stellt eine umfangreiche LaTeX-Distribution dar, die entweder direkt von der offiziellen texlive-Website oder (was meist einfacher und in vielen Fällen ausreichend ist) über spezielle dafür vorgesehene Pakete der einzelnen Linux-Distribution installiert werden kann (s.u.). Unabhängig von der Installation einer LaTeX-Distribution benötigt man einen entsprechenden TeX-Editor. Hier bieten sich an: Kile (KDE), TeXMaker (QT), Eclipse (Java, über das Plugin TeXlipse) oder JLatexEditor (Java). Siehe auch: \url{http://wiki.ubuntuusers.de/LaTeX-Editoren}.
+\textit{TeX Live} stellt eine umfangreiche LaTeX-Distribution dar, die entweder direkt von der offiziellen texlive-Website oder (was meist einfacher und in vielen Fällen ausreichend ist) über spezielle dafür vorgesehene Pakete der einzelnen Linux-Distribution installiert werden kann (s.u.). Unabhängig von der Installation einer LaTeX-Distribution benötigt man einen entsprechenden TeX-Editor. Hier bieten sich an: Kile (KDE), TeXMaker (QT), Eclipse (Java, über das Plugin TeXlipse) oder JLatexEditor (Java). Siehe auch: \url{http://wiki.ubuntuusers.de/LaTeX-Editoren}.
 
 \subsubsection{Ubuntu}
 Möchte man texlive aus den Ubuntu-Quellen installieren, so sind folgende Pakete meist ausreichend (z.B. für das Bearbeiten der Protokollvorlage):
@@ -41,6 +44,10 @@ Möchte man sich vor lästigem Neuinstallieren weiterer Pakete schützen und daf
 
 \subsubsection{Fedora}
 \todo{Fedora packages}
+Wie unter Ubuntu so kommt mit Fedora \textit{TeX Live} nicht in der aktuellsten Version mit.
+Allerdings ist die Version 2013 in Fedora 20 die vorletzte Version.
+Sie ist in viele einzelne Pakete aufgeteilt, die alle mit \textit{texlive} beginnen und bei Bedarf nachinstalliert werden können.
+Selbstverständlich klappt die Installation direkt aus den Quellen wie unter Ubuntu gut, jedoch muss man beim Nachinstallieren von Schriften gegebenenfalls als Benutzer \textit{root} arbeiten und ein \textit{sudo \ldots} reicht nicht aus.
 
 \subsubsection{OpenSUSE}
 \todo{OpenSUSE packages}
