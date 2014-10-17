@@ -53,7 +53,7 @@ Mit dem folgenden Befehl installiert man die wichtigsten Pakete unter Fedora:
 \end{verbatim}
 
 \subsubsection{OpenSUSE}
-Ein vollständige texlive Installation unter OpenSUSE funktioniert mit:
+Die 
 \begin{verbatim}
-	zypper install texlive
+	
 \end{verbatim}
