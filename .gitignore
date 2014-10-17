@@ -8,6 +8,7 @@
 
 
 ### KDevelop4 ###
+*.backup
 *.kdev4
 .kdev4/
 
