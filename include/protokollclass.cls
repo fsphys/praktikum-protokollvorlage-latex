@@ -52,6 +52,8 @@
 \usepackage{vmargin}				% Adjust margins in a simple way (is used below).
 \usepackage{fancyhdr}				% Define simple page headings (is used below).
 
+\usepackage{varioref}				% Intelligent page references. Provides \vref and \vpageref
+
 \usepackage{booktabs}
 \usepackage[table]{xcolor}			% used for some coloring commands. table option for beautiful colored tables.
 \definecolor{kitcolor}{rgb}{0 0.61 0.50}	% color is defined here and later used for several definitions
