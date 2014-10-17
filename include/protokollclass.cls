@@ -37,9 +37,6 @@
 \microtypecontext{spacing=nonfrench}		% option for scrbook to allow for microtype->nonfrenchspacing
 						% for info on nonfrenchspacing: en.wikipedia.org/wiki/History_of_sentence_spacing#French_and_English_spacing
 
-\usepackage{xcolor}				% used for some coloring commands
-\definecolor{kitcolor}{rgb}{0 0.61 0.50}	% color is defined here and later used for several definitions
-
 \usepackage[english,ngerman]{babel}		% babel language styles. you may add languages, if need to be.
 \usepackage[fixlanguage]{babelbib}		% use babel bibtex. fixlanguage = don't switch language between bib items
 %\usepackage{cite}				% if you prefer bibtex without babel
@@ -54,6 +51,10 @@
 
 \usepackage{vmargin}				% Adjust margins in a simple way (is used below).
 \usepackage{fancyhdr}				% Define simple page headings (is used below).
+
+\usepackage{booktabs}
+\usepackage[table]{xcolor}			% used for some coloring commands. table option for beautiful colored tables.
+\definecolor{kitcolor}{rgb}{0 0.61 0.50}	% color is defined here and later used for several definitions
 
 \usepackage[pdftex]{graphicx}			% including images
 \usepackage[	normal,
