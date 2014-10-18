@@ -1,7 +1,7 @@
 \section{Kosten und Nutzen von LaTeX}
 Wer den Kurs \textit{Einführung in das Rechnergestütze Arbeiten} besucht hat, kann vermutlich einen Teil dieses Kapitels überspringen.
 
-LaTeX (Deutsch gesprochen: \glqq Latech\grqq) ist ein Programm, mit dem Textdokumente erstellt werden können, ähnlich wie mit Microsoft Word. Wesentlicher Unterschied ist, dass unter Word direkt das Ergebnis des Geschriebenen sichtbar ist und die Eigenschaften der Darstellung (das sogenannte Markup) durch das Programm verarbeitet und dem Nutzer nicht gezeigt werden. Bei LaTeX muss das Markup vom Nutzer ganz explizit mitverwendet werden, damit das gewünschte Ergebnis entsteht. LaTeX ist unter seinen Nutzern dafür beliebt, dass es äußerst präzise abstimmbar ist und man im Prinzip (im Gegensatz zu z.B. Word) durch nichts außer dem dazugehörigen Aufwand beschränkt ist.
+LaTeX (Deutsch gesprochen: \glqq Latech\grqq) ist ein Programm, mit dem Textdokumente erstellt werden können, ähnlich wie mit Microsoft Word. Wesentlicher Unterschied ist, dass unter Word direkt das Ergebnis des Geschriebenen sichtbar ist und die Eigenschaften der Darstellung (das sogenannte Markup) durch das Programm verarbeitet und dem Nutzer nicht gezeigt werden. Bei LaTeX muss das Markup vom Nutzer ganz explizit mitverwendet werden, damit das gewünschte Ergebnis entsteht. LaTeX ist unter seinen Nutzern dafür beliebt, dass es äußerst präzise abstimmbar ist und man im Prinzip (im Gegensatz zu z.B.~Word) durch nichts außer dem dazugehörigen Aufwand beschränkt ist.
 Besonders nützlich erweist sich LaTeX beim Setzen von Formeln, weshalb es zum Verfassen naturwissenschaftlicher Dokumente nochmals häufiger verwendet wird. So kann das Setzen folgender Formel in Word etwas mühselig werden:
 
 \begin{align}
@@ -15,38 +15,38 @@ Besonders nützlich erweist sich LaTeX beim Setzen von Formeln, weshalb es zum V
 
 Einzelne Feinheiten bei der Formelsetzung sind unter Word dazu gar nicht möglich, LaTeX ist hier hingegen sehr flexibel und es gibt praktisch keine Einschränkungen. LaTeX ist zu dem OpenSource und für jedermann frei zugänglich. LaTeX wird außerdem in einigen Onlineportalen als Möglichkeit zum Schreiben mathematischer Formeln unterstützt. LaTeX verfügt weiter über viele Funktionen, die zum Erstellen und Verwalten von Inhalts-, Abbildungs-, Tabellen- sowie Literaturverzeichnissen nützlich sind. Die Erweiterung Bibtex stellt hier eine wesentliche Hilfe beim Verwalten von Zitaten und einer umfangreichen Literaturdatenbank dar.
 
-Die Fachschaft und viele Dozenten empfehlen wegen dieser und auch wegen weiterer Gründen den Einstieg in LaTeX, er ist jedoch nicht zwingend notwendig. Wer seine Protokolle mit Word und dergleichen verfassen möchte, dem steht dies absolut frei. Wer sich gegen LaTeX entschließt, braucht den Rest dieses Dokuments nicht zu lesen.
+Die Fachschaft und viele Dozenten empfehlen wegen dieser und auch wegen weiterer Gründe den Einstieg in LaTeX, er ist jedoch nicht zwingend notwendig. Wer seine Protokolle mit Word und dergleichen verfassen möchte, dem steht dies absolut zu. Wer sich gegen LaTeX entschließt, braucht den Rest dieses Dokuments nicht zu lesen.
 
 \section{Installation}
-\subsubsection{Verwendung einer Virtualbox}
-\textbf{Ein Hinweis vorab:} Im Folgenden wird die Installation von LaTeX unter verschiedenen Betriebssystemen beschrieben. Alternativ zur lokalen Installation von LaTeX auf dem eigenen Rechner kann man LaTeX auch in einer virtuelle Maschine nutzen. Eine virtuelle Maschine ist quasi ein vollständiges Betriebssystem, das als Programm auf dem lokalen Rechner läuft und bei Bedarf aufgerufen werden kann. Prof. Quast vom Institut für exp. Kernphysik stellt eine solche virtuelle Maschine zur Verfügung. Sie basiert auf Kubuntu 14.04 und stellt neben vielen anderen Programmen auch die \textit{TeX Live} Pakete aus den Ubuntu-Quellen zur Verfügung. Der Vorteil einer virtuellen Maschine ist, dass trotz der vielen verschiedenen Betriebssysteme und Programme, die im Privatbereich zum Einsatz kommen, eine vorgefertigte und immer gleich bleibende Arbeitsumgebung für Studenten geschaffen werden kann, die verlässlich läuft und den Studenten alle notwendige Software zum Arbeiten zur Verfügung stellt. Gerade für Studenten, die die Installation einer Linux-Distribution auf ihrem eigenen Rechner scheuen (egal, ob nun Windows ersetzt werden oder im Dualboot zur Verfügung stehen soll), können dadurch leicht Linux ausprobieren und sich damit vertraut machen, ohne von dem Betriebssystem grundsätzlich abhängig zu sein.
+\subsection{Verwendung einer Virtualbox}
+In den nachfolgenden Abschnitten wird die Installation von LaTeX unter verschiedenen Betriebssystemen behandelt. Alternativ zur lokalen Installation von LaTeX auf dem eigenen Rechner kann man LaTeX auch in einer virtuelle Maschine nutzen. Eine virtuelle Maschine ist quasi ein vollständiges Betriebssystem, das als Programm auf dem lokalen Rechner läuft und bei Bedarf aufgerufen werden kann. Prof.~Quast vom Institut für exp.~Kernphysik stellt eine solche virtuelle Maschine zur Verfügung. Sie basiert auf Kubuntu 14.04 und stellt neben vielen anderen Programmen auch die \textit{TeX Live} Pakete aus den Ubuntu-Quellen zur Verfügung. Der Vorteil einer virtuellen Maschine ist, dass trotz der vielen verschiedenen Betriebssysteme und Programme, die im Privatbereich zum Einsatz kommen, eine vorgefertigte und immer gleich bleibende Arbeitsumgebung für Studenten geschaffen werden kann, die verlässlich läuft und den Studenten alle notwendige Software zum Arbeiten zur Verfügung stellt. Besonders Studenten, die die Installation einer Linux-Distribution auf ihrem eigenen Rechner gänzlich scheuen (sowohl die vollständige Ersetzung von Windows als auch das Aufsetzen eines Dualboot-Systems), können dadurch leicht Linux ausprobieren und sich damit vertraut machen, ohne von dem Betriebssystem grundsätzlich abhängig zu sein und es vollständig installieren zu müssen.
 
-Anleitungen zu seiner Virtualbox stellt Prof. Quast vom IEKP auf seiner Seite zur Verfügung (\url{http://www-ekp.physik.uni-karlsruhe.de/~quast/VMroot/}). Man lese dazu die Anleitungen \glqq VMachine.pdf\grqq und \glqq VMroot.pdf\grqq. In der Virtualbox ist \textit{TeX Live} von 2012 aus den Ubuntuquellen installiert. Damit kann die Vorlage komplett kompiliert werden. Als LaTeX-Editor empfiehlt sich Kile, der noch nachinstalliert werden muss (\verb|ALT+F2| $\rightarrow$ \verb|Muon Discover| $\rightarrow$ Suche nach \verb|Kile|, (La)TeX development environment und auf Installieren klicken. Starten über \verb|ALT+F2| $\rightarrow$ \verb|kile| oder über das Startmenü in der Seitenleiste).
+Anleitungen zu seiner Virtualbox stellt Prof.~Quast vom IEKP auf seiner Seite zur Verfügung (\url{http://www-ekp.physik.uni-karlsruhe.de/~quast/VMroot/}). Man lese dazu die Anleitungen \glqq VMachine.pdf\grqq\ und \glqq VMroot.pdf\grqq. In der Virtualbox ist \textit{TeX Live} von 2012 aus den Ubuntuquellen installiert. Damit kann die Vorlage komplett kompiliert werden. Als LaTeX-Editor empfiehlt sich Kile, der noch nachinstalliert werden muss (\verb|ALT+F2| $\rightarrow$ \verb|Muon Discover| $\rightarrow$ Suche nach \verb|Kile|, (La)TeX development environment $\rightarrow$ Auf Installieren klicken. Starten über \verb|ALT+F2| $\rightarrow$ \verb|kile| oder über das Startmenü in der Seitenleiste).
 
 \subsection{Installation unter Windows}
-Es gibt im wesentlichen zwei Editoren, die sich für das Bearbeiten von TeX-Dateien unter Windows eignen, nämlich \textit{MikTeX} (\url{http://www.miktex.org/}) und \textit{Texmaker} (\url{http://www.xm1math.net/texmaker/}). Beide bringen LaTeX von Hause aus mit und zusätzlich benötigte Pakete werden automatisch nachinstalliert.
+Es gibt im Wesentlichen zwei Editoren, die sich für das Bearbeiten von TeX-Dateien unter Windows eignen, nämlich \textit{MikTeX} (\url{http://www.miktex.org/}) und \textit{Texmaker} (\url{http://www.xm1math.net/texmaker/}). Beide bringen LaTeX von Hause aus mit und zusätzlich benötigte Pakete werden automatisch nachinstalliert.
 
-Alternativ kann man \textit{texlive} installieren, die zurzeit umfangreichste LaTeX-Distribution. Infos zur Installation der aktuellen texlive Version findet man ebenfalls auf der offiziellen texlive Website: \url{https://www.tug.org/texlive/}. Einen Überblick über weitere Editoren speziell auch für Windows und Mac bietet Herr Dr. Poenicke auf seiner Seite zum ERA-Kurs: \url{http://comp.physik.kit.edu/Lehre/ERA/05_Latex/}.
+Alternativ kann man \textit{TeX Live} installieren, die zurzeit umfangreichste LaTeX-Distribution. Infos zur Installation der aktuellen \textit{TeX Live} Version findet man ebenfalls auf der offiziellen \textit{TeX Live} Website: \url{https://www.tug.org/texlive/}. Einen Überblick über weitere Editoren speziell auch für Windows und Mac bietet Herr Dr. Poenicke auf seiner Seite zum ERA-Kurs: \url{http://comp.physik.kit.edu/Lehre/ERA/05_Latex/}.
 
 \subsection{Installation unter Mac OS X}
-Unter Mac OS X gibt es ähnlich wie unter Linux mit \textit{TeX Live} mit \textit{MacTeX} eine sehr umfangreiche Distribution zur Verfügung und sogar auch eine abgespeckte Version, falls die SSD doch zu klein ist. Das $2.4$\,GB große \textit{pkg} für OS X ab 10.5 und sogar für noch ältere Versionen gibt es unter \url{https://www.tug.org/mactex/} immer aktuell. Ein \textit{pkg} zu installieren ist zwar aufwendiger als ein \textit{DMG} zu installieren, aber mit ein paar Klicks auch schnell geschehen. Natürlich gibt es für die Freunde des Terminals auch ein Homebrew-Cask mit Namen \textit{mactex}.
+Unter Mac OS X steht, ähnlich wie mit \textit{TeX Live} unter Linux, mit \textit{MacTeX} eine sehr umfangreiche Distribution zur Verfügung und sogar auch eine abgespeckte Version, falls die SSD doch zu klein ist. Das $2.4$\,GB große \textit{pkg} für OS X ab 10.5 und sogar für noch ältere Versionen gibt es unter \url{https://www.tug.org/mactex/} immer aktuell. Ein \textit{pkg} zu installieren ist zwar aufwendiger als ein \textit{DMG} zu installieren, aber mit ein paar Klicks auch schnell geschehen. Natürlich gibt es für die Freunde des Terminals auch ein Homebrew-Cask mit Namen \textit{mactex}.
 
 Eine weiter auf \textit{TeX Live} basierende Lösung für OS X stellt \textit{TeXShop} (\url{http://pages.uoregon.edu/koch/texshop/}) dar. Dieser Editor bietet unter anderem eine Live-Vorschau, ist jedoch von der Benutzeroberfläche nicht jedermanns Sache. 
-Als Alternative bietet sich hier natürlich auch wieder \textit{TeXMaker} an.
+Als Alternative bietet sich hier natürlich auch wieder \textit{Texmaker} an (\url{http://www.xm1math.net/texmaker/}).
 
 \subsection{Installation unter Linux}
-\textit{TeX Live} stellt eine umfangreiche LaTeX-Distribution dar, die entweder direkt von der offiziellen texlive-Website oder (was meist einfacher und in vielen Fällen ausreichend ist) über spezielle dafür vorgesehene Pakete der einzelnen Linux-Distribution installiert werden kann (s.u.). Unabhängig von der Installation einer LaTeX-Distribution benötigt man einen entsprechenden TeX-Editor. Hier bieten sich an: Kile (KDE), TeXMaker (QT), Eclipse (Java, über das Plugin TeXlipse) oder JLatexEditor (Java). Siehe auch: \url{http://wiki.ubuntuusers.de/LaTeX-Editoren}.
+\textit{TeX Live} stellt eine umfangreiche LaTeX-Distribution dar, die entweder direkt von der offiziellen \textit{TeX Live}-Website oder (was meist einfacher und in vielen Fällen ausreichend ist) über spezielle dafür vorgesehene Pakete der einzelnen Linux-Distribution installiert werden kann (s.u.). Unabhängig von der Installation einer LaTeX-Distribution benötigt man einen entsprechenden TeX-Editor. Hier bieten sich an: Kile (KDE), Texmaker (QT), Eclipse (Java, über das Plugin TeXlipse) oder JLatexEditor (Java). Siehe auch: \url{http://wiki.ubuntuusers.de/LaTeX-Editoren}.
 
 \subsubsection{Ubuntu}
-Möchte man texlive aus den Ubuntu-Quellen installieren, so sind folgende Pakete meist ausreichend (z.B. für das Bearbeiten der Protokollvorlage):
+Möchte man \textit{TeX Live} aus den Ubuntu-Quellen installieren, so sind folgende Pakete meist ausreichend (z.B. für das Bearbeiten der Protokollvorlage):
 \begin{verbatim}
-	texlive texlive-lang-german texlive-doc-de texlive-latex-extra
-	texlive-fonts-extra texlive-science
+	texlive texlive-lang-german texlive-doc-de
+	texlive-latex-extra texlive-science
 \end{verbatim}
-Möchte man sich vor lästigem Neuinstallieren weiterer Pakete schützen und dafür eine etwas zeit- und speicherplatzintensivere Installation in Kauf nehmen, bietet sich die Installation des Pakets \verb|texlive-full| an. Die texlive Version in den Ubuntu-Quellen ist von 2012. Die aktuellste texlive Version ist von 2014. In den meisten Fällen kommt man mit der Version von 2012 gut aus. Informationen zur manuellen Installation findet man auf der offiziellen texlive Website: \url{https://www.tug.org/texlive/}. Entscheidet man sich dazu, die aktuellsten texlive packages mauell zu installieren, handelt man sich häufig Probleme mit der Paketverwaltung ein, wenn man versucht TeX-Editoren, wie z.B. Kile zu installieren. Eine Lösung findet man für Kile (und analog auch für andere Editoren) z.B. unter \url{http://tex.stackexchange.com/questions/63302/kile-and-texlive-2012}, hier für das gleiche Problem bei der Umstellung von Version 2009 auf 2012.
+Möchte man sich vor lästigem Neuinstallieren weiterer Pakete schützen und dafür eine etwas zeit- und speicherplatzintensivere Installation in Kauf nehmen, bietet sich die Installation des Pakets \verb|texlive-full| an. Die derzeitige \textit{TeX Live} Version in den Ubuntu-Quellen ist von 2012. Die aktuellste \textit{TeX Live} Version ist von 2014. In den meisten Fällen kommt man mit der Version von 2012 gut aus. Informationen zur manuellen Installation findet man auf der offiziellen \textit{TeX Live}-Website: \url{https://www.tug.org/texlive/}. Entscheidet man sich dazu, die aktuellsten \textit{TeX Live} packages mauell zu installieren, handelt man sich häufig Probleme mit der Paketverwaltung ein, wenn man versucht TeX-Editoren, wie z.B. Kile zu installieren. Eine Lösung findet man für Kile (und analog auch für andere Editoren) z.B. unter \url{http://tex.stackexchange.com/questions/63302/kile-and-texlive-2012}, hier für das gleiche Problem bei der Umstellung von Version 2009 auf 2012.
 
 \subsubsection{ArchLinux und Manjaro}
-Die Archlinux-Quellen enthalten stets die aktuelleste texlive-Version. Eine vollständige texlive Installation erreicht man mit:
+Die Archlinux-Quellen enthalten stets die aktuelleste \textit{TeX Live}-Version. Eine vollständige \textit{TeX Live} Installation erreicht man mit:
 \begin{verbatim}
 	pacman -S texlive-most
 \end{verbatim}
@@ -54,8 +54,8 @@ Die Archlinux-Quellen enthalten stets die aktuelleste texlive-Version. Eine voll
 \subsubsection{Fedora}
 Wie unter Ubuntu so kommt mit Fedora \textit{TeX Live} nicht in der aktuellsten Version mit.
 Allerdings ist die Version 2013 in Fedora 20 die vorletzte Version.
-Sie ist in viele einzelne Pakete aufgeteilt, die alle mit \textit{texlive} beginnen und bei Bedarf nachinstalliert werden können.
-Selbstverständlich klappt die Installation direkt aus den Quellen wie unter Ubuntu gut, jedoch muss man beim Nachinstallieren von Schriften gegebenenfalls als Benutzer \textit{root} arbeiten und ein \textit{sudo \ldots} reicht nicht aus.
+Sie ist in viele einzelne Pakete aufgeteilt, die alle mit \verb|texlive| beginnen und bei Bedarf nachinstalliert werden können.
+Selbstverständlich klappt die Installation direkt aus den Quellen wie unter Ubuntu gut, jedoch muss man beim Nachinstallieren von Schriften gegebenenfalls als Benutzer \verb|root| arbeiten und ein \verb|sudo ...| reicht nicht aus.
 Mit dem folgenden Befehl installiert man die wichtigsten Pakete unter Fedora:
 \begin{verbatim}
 	yum install texlive-scheme-basic texlive-collection-mathextra
@@ -63,7 +63,7 @@ Mit dem folgenden Befehl installiert man die wichtigsten Pakete unter Fedora:
 \end{verbatim}
 
 \subsubsection{OpenSUSE}
-Ein vollständige texlive Installation unter OpenSUSE funktioniert mit:
+Ein vollständige \textit{TeX Live} Installation unter OpenSUSE funktioniert mit:
 \begin{verbatim}
 	zypper install texlive
 \end{verbatim}
