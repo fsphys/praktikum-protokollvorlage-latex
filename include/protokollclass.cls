@@ -51,6 +51,7 @@
 
 \usepackage{vmargin}				% Adjust margins in a simple way (is used below).
 \usepackage{fancyhdr}				% Define simple page headings (is used below).
+\usepackage{placeins}				% To use \FloatBarrier
 
 \usepackage{varioref}				% Intelligent page references. Provides \vref and \vpageref
 
