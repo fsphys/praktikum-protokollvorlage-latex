@@ -286,6 +286,13 @@
 
 \newcommand{\MainMatter}
 {
+	\clearpage
+	
+	\begingroup % make sure that there is no involuntary blankpage added after toc.
+	\let\cleardoubleoddstandardpage\relax
+	\mainmatter
+	\endgroup
+	
 	\mainmatter
 	\pagestyle{fancy}
 	\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ ##1}{}}
