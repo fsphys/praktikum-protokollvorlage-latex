@@ -331,7 +331,7 @@
 
 \newcommand{\Appendix}
 {
-	\par
+	\clearpage
 	\appendix
 	\setcounter{section}{0}
 	\setcounter{subsection}{0}
