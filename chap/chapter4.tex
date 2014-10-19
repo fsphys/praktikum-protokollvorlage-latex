@@ -1,4 +1,6 @@
 \section{Allgemeine Befehlsreferenzen und Dokumentationen}
+Die LaTeX-Kurzeinführung von W. Schmidt und Anderen ist kompakt und sehr hilfreich: \url{ftp://ftp.fu-berlin.de/tex/CTAN/info/lshort/german/l2kurz.pdf}.
+
 Benötigt man allgemeine Hilfe zu einem bestimmten Thema, wird man oft hier fündig:
 
 \begin{itemize}
@@ -11,8 +13,6 @@ Benötigt man allgemeine Hilfe zu einem bestimmten Thema, wird man oft hier fün
 Möchte man Hilfe zu einem bestimmten vorliegenden Problem erhalten, so kann man unter \url{https://tex.stackexchange.com/} ganz gezielt suchen oder auch Fragen stellen.
 
 Sucht man nach dem Befehl für ein ganz bestimmtes Zeichen, ist folgendes Dokument nützlich: \url{www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf}.
-
-Das Setzen von Größen und Einheiten will gekonnt sein, ist aber mit dem \verb|siunitx|-Paket sehr leicht: \url{http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf}.
 
 \section{Einige nützliche Beispiele}
 \subsection{Zitate}
@@ -75,3 +75,13 @@ Die Befehle sind fast alle dieselben wie bei der \verb|figure|-Umgebung, hier ta
 Der Parameter in geschwungenen Klammern hinter dem Beginn der Umgebung gibt die Zahl und die Orientierung der Spalten an (hier sind es drei und sie sind alle rechtsbündig orientiert). Von einer Spalte zur nächsten springt man mit dem Kaufmannsund (\verb|&|) und mit zwei Backslashes (\verb|\\|) springt man in eine neue Reihe.
 
 Der Befehl \verb|\rowcolor...| dient zur Einfärbung verschiedener Zeilen, was die Übersichtlichkeit fördert. Durch einfügen eines senkrechten Striches (aka. Pipe: \verb&|&) zwischen den Angaben zur Orientierung der Spalten können senkrechte Linien in den Tabellen erzeugt werden. Durch \verb|\hline| können waagerechte Striche zwischen verschiedenen Reihen eingefügt werden. Auch hier wird wieder darauf verwiesen, dass überlicherweise eine Tabelle nur über die in obigem Minimalbeispiel auftauchenden waagerechten Trennlinien über und unter der ersten Zeile sowie am Ende verwendet werden.  Alles andere verwirrt eher und sorgt nicht für mehr Übersicht. Die Linien werden hier mit den erweiterten Befehlen \verb|\toprule|, \verb|\midrule| und \verb|\bottomrule| aus dem \verb|booktabs|-Paket verwendet. Diese stellen zusätzlich die Linienbreite und die Abstände ein.
+
+\subsection{Einheiten und wissenschaftliche Notation}
+Einheiten unterliegen typographischen Regeln, deren Einhaltung das Paket \verb|siunitx| komfortabel möglich macht. Außerdem beinhaltet es ein paar interessante Zusatzfunktionen. Einheitensymbole werden mit aufrechten Kleinbuchstaben gesetzt, Ausnahmen bestätigen die Regel: ist die Einheit von einem Namen abgeleitet, wird der erste Buchstabe groß geschrieben. Außerdem darf man für Liter auch ein großes L verwenden, damit es nicht mit einer Eins verwechselt wird.
+
+\verb|\SI{5,4}{\metre}| setzt $\SI{5,4}{\metre}$ mit richtigem Abstand zwischen Zahl und Einheit. Außerdem verhindert es die Trennung zwischen den beiden. \verb|\si{}| setzt nur eine Einheit, \verb|\num{}| nur eine Zahl. Einheiten werden mit Befehlen gesetzt, zum Beispiel \verb|\second|, \verb|\metre|, \verb|\degree|. Präfixe stehen ebenfalls zur Verfügung: \verb|\kilo|, \verb|\centi|, \verb|\micro|. Für Potenzen gibt es \verb|\square|, \verb|\squared|, \verb|\cubic|, \verb|\cubed|, \verb|\raiseto{}| und \verb|\tothe{}|. Negative Potenzen erreicht man mit \verb|\per|. Außerdem ist es möglich, Fehler gleich mit anzugeben: \verb|\SI{5,4(12)}{\metre}| ergibt $\SI{5,4(12)}{\metre}$. Wissenschaftliche Notation ist auch möglich: \verb|\SI{5,4(12)e-3}{\kilo\metre}| ergibt $\SI{5,4(12)e-3}{\kilo\metre}$.
+
+Was als Dezimaltrennzeichen benutzt wird, und wie die Fehler gesetzt werden, definieren Optionen, die entweder bei jedem Objekt mitgegeben werden oder bereits in der Präambel gesetzt werden. Speziell diese Vorlage übernimmt diese Arbeit und zwar abhängig von der Option \verb|\SelectLanguage|, die in der \verb|main.tex|-Datei definiert wird.
+
+Eine grobe Übersicht erhält man durch: \url{http://www.suedraum.de/latex/stammtisch/werte_und_einheiten_siunitx.pdf}. Die detaillierte Paketbeschreibung gibt es hier: \url{http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf}.
+

@@ -29,7 +29,7 @@ Der dritte Block beinhaltet einige auskommentierte Befehle, die bei Bedarf einge
 
 Falls ein Protokoll auf Englisch verfasst werden soll, können vordefinierte Begriffe wie Literaturverzeichnis (Engl.: Bibliography) oder Kapitel (Engl.: Chapter) auf eine gewählte Sprache eingestellt werden. Diese Sprache wird auch im Literaturverzeichnis verwendet.
 
-Nach dem Befehl \verb|\begin{document}| wird der eigentliche Inhalt des Dokuments festgelegt. Zuerst werden die Titelseite eingebunden und ein Inhaltsverzeichnis erstellt. Der Befehl \verb|frontmatter| sagt, dass der nachfolgende Teil im PDF-Verzeichnis mit römischen Zahlen nummeriert werden soll und stellt weitere Layoutdetails ein.
+Nach dem Befehl \verb|\begin{document}| wird der eigentliche Inhalt des Dokuments festgelegt. Zuerst werden die Titelseite eingebunden und ein Inhaltsverzeichnis erstellt. Der Befehl \verb|\FrontMatter| sagt, dass der nachfolgende Teil im PDF-Verzeichnis mit römischen Zahlen nummeriert werden soll und stellt weitere Layoutdetails ein.
 
 Überlicherweise beginnt das Literaturverzeichnis eines Berichtes auf einer ungeraden Seite und die Rückseite des Deckblatts ist leer. Da nun Praktikumsprotokolle vielleicht nicht den höchsten Anspruch erheben müssen und bei den vielen Protokollen pro Jahr einiges an Papier gespart werden kann, ist es vielleicht empfehlenswert sich für die kürzere Version mit Literaturverzeichnis auf der Rückseite des Deckblatts zu entscheiden, auch wenn es normalerweise stilistisch anders gehalten wird. Eine leere Rückseite kann jederzeit mit \verb|\cleardoublepage| nach dem einbinden der Titelseite eingefügt werden.
 
@@ -48,3 +48,5 @@ Bilder und Tabellen können natürlich von überall aus eingebunden werden, aber
 
 \section{Fragen und Verbesserungen}
 Diese LaTeX-Vorlage soll als Anregung und vereinfachten Einstieg in das Schreiben von Praktikumsprotokollen mit LaTeX dienen. Für das Praktikum darf (und am besten soll) jeder Praktikant die Vorlage verändern und Dinge ausprobieren, um den Umgang mit LaTeX zu lernen. Einzig das Deckblatt soll nicht umgestaltet werden, damit es keine Probleme bei der Verwaltung des Praktikums gibt. Verbesserungsvorschläge (hier auch gerne zur Titelseite), aber natürlich auch Fragen können jederzeit an die Fachschaft an die Mailadresse \href{mailto:latexvorlage@fachschaft.physik.kit.edu}{latexvorlage@fachschaft.physik.kit.edu} gerichtet werden.
+
+Es ist bekannt, dass die gleichzeitige Verwendung des \verb|microtype| und des \verb|siunitx| Paket Warnungen ausgibt. Das Problem besteht darin, dass siunitx Befehle neu definiert, die microtype selbst mitbringt. Dabei entsteht kein deutlich sichtbares Problem und die PDF kann nachwievor Problemlos kompiliert werden. Das Problem wird vermutlich in eine der nächsten Versionen der Vorlage gelöst.
