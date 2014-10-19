@@ -47,7 +47,10 @@
 %\usepackage{bbm}				% blackboard style fonts. You may prefer the provided \mathbbm{R} to ordinary \mathbb{R}.
 \usepackage{upgreek}				% use $\uppi$ etc.
 \usepackage{nicefrac}				% use \nicefrac{1}{2} for inline text, if you want
-\usepackage{siunitx}				% package for units. Use \si{\ampere} or \SI{0.3}{\angstrom}.
+\usepackage[load-configurations=abbreviations]
+{siunitx}					% package for units. Use \si{\ampere} or \SI{0.3}{\angstrom}.
+\sisetup{per-mode=fraction}			% style of writing units
+\sisetup{separate-uncertainty=true}		% to allow for $\pm ...$ as uncertainty instead of 0.34(12)
 
 \usepackage{vmargin}				% Adjust margins in a simple way (is used below).
 \usepackage{fancyhdr}				% Define simple page headings (is used below).
@@ -137,6 +140,34 @@
 
 \parindent 0cm                    			% Do not indent beginning of paragraph
 \parskip 1.5ex plus0.5ex minus0.5ex			% Margin between paragraphs
+
+
+
+
+
+%% -----------------------------
+%% |      Language Setup       |
+%% -----------------------------
+\newcommand{\SelectLanguage}[1]
+{
+	\AtBeginDocument
+	{
+		\selectlanguage{#1}
+		
+		\iflanguage{ngerman}					% sets , for German and . otherwise
+		{
+			\sisetup{output-decimal-marker={,}}
+			\sisetup{list-final-separator={ und }}		% "3, 4 and 5" in English or "3, 4 und 5" in German
+			\sisetup{range-phrase={ bis }}			% "1.5 to 1.8" in English or "1,5 bis 1,8" in German
+			
+		}
+		{
+			\sisetup{output-decimal-marker=.}
+			\sisetup{list-final-separator={ and }}		% "3, 4 and 5" in English or "3, 4 und 5" in German
+			\sisetup{range-phrase={ to }}			% "1.5 to 1.8" in English or "1,5 bis 1,8" in German
+		}
+	}
+}
 
 
 
