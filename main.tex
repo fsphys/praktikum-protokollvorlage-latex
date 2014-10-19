@@ -64,9 +64,14 @@
 	% Titelseite und ToC
 	\FrontMatter
 	
-	\input{include/titlepage} %\cleardoublepage
-
-	\tableofcontents %\cleardoublepage
+	\input{include/titlepage} % \cleardoublepage
+	
+	\begingroup \let\clearpage\relax % in order to avoid listoffigures and listoftables on new pages
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\endgroup
+	%\cleardoublepage
 	
 	
 	
