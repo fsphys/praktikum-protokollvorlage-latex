@@ -9,7 +9,8 @@ Both, major and minor changes in the release version, will be applied to the mas
 
 ## Use the template
 First, obtain a copy of the template. You have multiple possibilities:
-* download a [snapshot of the template](https://github.com/fsphys/praktikum-protokollvorlage-latex/archive/master.zip) or
+* download the [most recent release of the template](https://github.com/fsphys/praktikum-protokollvorlage-latex/releases),
+* download a [development snapshot of the template](https://github.com/fsphys/praktikum-protokollvorlage-latex/archive/master.zip) or
 * clone this repository with git: <code>git clone https://github.com/fsphys/praktikum-protokollvorlage-latex.git</code>.
 
 Compile on the command line using <code>make main.pdf</code> or your favorite LaTeX editor, which will do something like the following for you:
@@ -20,7 +21,7 @@ Compile on the command line using <code>make main.pdf</code> or your favorite La
 
 The template is known to be compatible with TeXLive 2012 and 2014.
 
-For detailed information on using the template, see the [readme pdf](https://github.com/fsphys/praktikum-protokollvorlage-latex/blob/readme/main.pdf?raw=true).
+For detailed information on using the template, see the readme pdf.
 
 ## Contribute to the template
 
