@@ -64,7 +64,7 @@
 \begin{document}
 	% Titelseite und ToC
 	\frontmatter \pagestyle{empty}
-	\input{include/titlepage} \clearpage
+	\input{include/titlepage} %\cleardoublepage
 
 	\tableofcontents\thispagestyle{empty}
 	
@@ -74,16 +74,14 @@
 	\MainMatter
 	
 	\chapter{Vorbereitungen}% (von \namea)}
-	\input{./chap/chapter1.tex} \cleardoublepage
-	%\chapter{Vorbereitungen (von \nameb)}
-	%\input{./chap/chapter2.tex} \cleardoublepage
+	\input{./chap/chapter1.tex} %\cleardoublepage
 	\chapter{Auswertung}
-	\input{./chap/chapter2.tex} \cleardoublepage
+	\input{./chap/chapter2.tex} %\cleardoublepage
 	
 	% Anhang für mehr oder weniger interessante Rechnungen etc.
 	\Appendix
 	\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % damit der Anhang im ToC ohne Nummer erscheint. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
-	\input{./chap/appendix.tex} \cleardoublepage
+	\input{./chap/appendix.tex} %\cleardoublepage
 	
 	
 	
