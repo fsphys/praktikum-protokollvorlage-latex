@@ -1,3 +1,5 @@
+.PHONY: clean pdf
+
 main.pdf: main.tex lit.bib data.tex $(shell find chap -type f) $(shell find fig -type f) $(shell find tab -type f) $(shell find include -type f)
 	pdflatex main.tex
 	bibtex main.aux
