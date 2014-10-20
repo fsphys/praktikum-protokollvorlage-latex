@@ -8,5 +8,8 @@ deckblatt.pdf: deckblatt.tex lit.bib data.tex $(shell find chap -type f) $(shell
 	pdflatex deckblatt.tex
 	pdflatex deckblatt.tex
 
+# needed for integration in vim-latex
+pdf: main.pdf
+
 clean:
 	rm *.aux *.log *.out *.bbl *.blg *.toc *.pdf
