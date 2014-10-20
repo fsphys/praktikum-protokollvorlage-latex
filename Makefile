@@ -4,5 +4,8 @@ main.pdf: main.tex lit.bib data.tex $(shell find chap -type f) $(shell find fig 
 	pdflatex main.tex
 	pdflatex main.tex
 
+# needed for integration in vim-latex
+pdf: main.pdf
+
 clean:
 	rm *.aux *.log *.out *.bbl *.blg *.toc *.pdf
