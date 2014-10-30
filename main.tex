@@ -46,10 +46,10 @@
 %\setboolean{forminput}{true}
 % um die Anmerkungen zu den Textfeldern anzeigen zu lassen
 %\setboolean{showannotations}{true}
-% um Seitenzahl in jedem Kapitel zu erneuern
-\pretocmd{\chapter}{\clearpage\setcounter{page}{1}}{}{}
-% um Kapitelnummerierung in Seitenzahl anzuführen.
-\setboolean{chapWiseNumb}{true}
+% um das Erneuern der Seitenzahl in jedem Kapitel zu unterbinden
+%\setboolean{chapResetPageNumb}{false}
+% um das Einbinden der Kapitelnummer in der Seitenzahl zu unterbinden
+%\setboolean{chapWiseNumb}{false}
 % english oder ngerman (new german für neue deutsche Rechtschreibung statt german)
 \SelectLanguage{ngerman}
 
