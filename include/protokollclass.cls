@@ -79,6 +79,7 @@
 
 \DeclareGraphicsRule{*}{mps}{*}{}		% enables compiling images with pdf-latex
 \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg,.jpeg,.mps} % different image extensions used
+\usepackage{epstopdf}				% may be necessary for miktex to convert eps to pdf figures
 
 \usepackage[	raiselinks=true,
 		bookmarks=true,
