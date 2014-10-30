@@ -283,7 +283,10 @@
 %% |   Style of appendix and mainmatter   |
 %% ----------------------------------------
 \newboolean{chapWiseNumb}
-\setboolean{chapWiseNumb}{false}
+\setboolean{chapWiseNumb}{true}
+
+\newboolean{chapResetPageNumb}
+\setboolean{chapResetPageNumb}{true}
 
 \newcommand{\FrontMatter}
 {
@@ -327,6 +330,11 @@
 	\ifthenelse{\boolean{chapWiseNumb}}
 	{
 		\renewcommand{\thepage}{\arabic{chapter}-\arabic{page}}
+	}{}
+	
+	\ifthenelse{\boolean{chapResetPageNumb}}
+	{
+		\pretocmd{\chapter}{\clearpage\setcounter{page}{1}}{}{}
 	}{}
 }
 
