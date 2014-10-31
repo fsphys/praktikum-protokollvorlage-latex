@@ -372,7 +372,7 @@
 
 \newcommand{\emptychapter}[2]
 {
-	\clearpage\addtocounter{chapter}{1}\addtocontents{toc}{\protect\contentsline {chapter}{\protect\numberline {\thechapter}#1}{#2}{chapter.\thechapter}}
+	\clearpage\addtocounter{chapter}{1}\addtocontents{toc}{\protect\contentsline {chapter}{\protect\numberline {\thechapter}#1}{#2}{}}
 }
 
 
