@@ -97,16 +97,19 @@
 	
 	% BibTeX
 	\TheBibliography
-	\addcontentsline{toc}{chapter}{\bibname} % \bibname = Bibliography oder Literaturverzeichnis
+	\chapter*{\bibname} \addcontentsline{toc}{chapter}{\bibname} % \bibname = Bibliography oder Literaturverzeichnis
+	\begingroup \newcommand{\relaxxx}[2]{} \let\chapter\relaxxx % in order to avoid the definition of an extra chapter
 	
 	%%% BIBTEX
 	% Use if you want citations to appear even if they are not referenced to: \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
-	% \nocite{*}
+	%\nocite{*}
 	\bibliographystyle{babalpha}
 	\bibliography{lit.bib}
 	
 	%%% THEBIBLIOGRAPHY
-	%\begin{thebibliography}{}
+	%\begin{thebibliography}{000}
 	%	\bibitem{ident}Eintrag ins Literaturverzeichnis
 	%\end{thebibliography}
+	
+	\endgroup
 \end{document}
