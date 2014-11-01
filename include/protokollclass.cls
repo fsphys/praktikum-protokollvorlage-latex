@@ -393,30 +393,33 @@
 
 \newcommand{\myFtextfield}[7]		% ausfüllbares TextFeld
 {
-  \begin{Form}
-    \renewcommand{\arraystretch}{0}
-    \begin{tabular}{@{}l@{}r@{}}
-      \begin{tabular}{@{}c@{}} \\[0.18cm] {#1}: \end{tabular} & \TextField[name={#7}, value={#2}, borderwidth=0, charsize={#4}, width=#3, maxlen={#6}]{}~~\\[0.2cm]
-      \\[2px]
-      \cline{2-2}
-      \\[2px]
-      \ifthenelse{\boolean{showannotations}}{& \multicolumn{1}{@{}r@{}}{\tiny {#5}}}{}
-    \end{tabular}
-    \renewcommand{\arraystretch}{1}
-  \end{Form}
+	\smash{
+	\begin{Form}
+		\renewcommand{\arraystretch}{0}
+		\begin{tabular}{@{}l@{}r@{}}
+			\begin{tabular}{@{}c@{}} \\[0.18cm] {#1}: \end{tabular} & \TextField[name={#7}, value={#2}, borderwidth=0, charsize={#4}, width=#3, maxlen={#6}]{}~~\\[0.2cm]
+			\\[2px]
+			\cline{2-2}
+			\\[6px]
+			\ifthenelse{\boolean{showannotations}}{& \multicolumn{1}{@{}r@{}}{\smash{\tiny {#5}}}}{}
+		\end{tabular}
+		\renewcommand{\arraystretch}{1}
+	\end{Form}}
 }
 
 \newcommand{\myTtextfield}[5]		% festes Textfeld, das nicht per PDF-Reader ausgefüllt werden kann
 {
-  \renewcommand{\arraystretch}{0}
-  \begin{tabular}{@{}l@{}l@{}}
-      \begin{tabular}{@{}c@{}} \\[0.18cm] {#1}: \end{tabular} & \begin{tabular}{@{}c@{}} \\[0.1cm] \makebox[#3][l]{\truncate[]{#3}{~\fontfamily{\sfdefault}\fontsize{#4}{1cm}\selectfont ~#2}}~~\end{tabular}\\[0.2cm]
-      \\[2px]
-      \cline{2-2}
-      \\[2px]
-      \ifthenelse{\boolean{showannotations}}{& \multicolumn{1}{@{}r@{}}{\tiny {#5}}}{}
-    \end{tabular}
-  \renewcommand{\arraystretch}{1}
+	\smash{
+	\renewcommand{\arraystretch}{0}
+	\begin{tabular}{@{}l@{}l@{}}
+		\begin{tabular}{@{}c@{}} \\[0.18cm] {#1}: \end{tabular} & \begin{tabular}{@{}c@{}} \\[0.1cm] \makebox[#3][l]{\truncate[]{#3}{~\fontfamily{\sfdefault}\fontsize{#4}{1cm}\selectfont ~#2}}~~\end{tabular}\\[0.2cm]
+		\\[2px]
+		\cline{2-2}
+		\\[6px]
+		\ifthenelse{\boolean{showannotations}}{& \multicolumn{1}{@{}r@{}}{\smash{\tiny {#5}}}}{}
+		\end{tabular}
+	\renewcommand{\arraystretch}{1}
+	}
 }
 
 \AtBeginDocument
