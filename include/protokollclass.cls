@@ -57,6 +57,8 @@
 \usepackage{fancyhdr}				% Define simple page headings (is used below).
 \usepackage{placeins}				% To use \FloatBarrier
 
+\usepackage[nottoc,notlot,notlof]{tocbibind}	% So that the Bibliography will be added to the ToC
+
 \usepackage{varioref}				% Intelligent page references. Provides \vref and \vpageref
 
 \usepackage{booktabs}
