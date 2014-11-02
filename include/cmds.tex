@@ -1,5 +1,5 @@
 % Simple Stuff
-\newcommand{\element}[3]{\makebox[\maxof{\widthof{$^{#2}$}}{\widthof{$^{#3}$}}][r]{$^{#3}_{\vphantom{#2}}$}\makebox[0px][r]{$_{#2}^{\vphantom{#3}}$}\textrm{#1}}
+%\newcommand{\element}[3]{\makebox[\maxof{\widthof{$^{#2}$}}{\widthof{$^{#3}$}}][r]{$^{#3}_{\vphantom{#2}}$}\makebox[0px][r]{$_{#2}^{\vphantom{#3}}$}\textrm{#1}} %already defined in mhchem package (see \ce{})
 %\newcommand{\celsius}{{}^\circ C} % already defined in siunitx package
 %\newcommand{\angstrom}{\mathring{A}} % already defined in siunitx package
 \renewcommand{\d}{\ensuremath{\text{d}}}
@@ -61,6 +61,7 @@
 \newcommand{\updownarrows}{\text{\rotatebox[origin=c]{90}{$\rightleftarrows$}}}
 \newcommand{\downuparrows}{\text{\rotatebox[origin=c]{270}{$\rightleftarrows$}}}
 
+% creation and annihilation operators
 \newcommand{\cre}{c^\dagger}
 \newcommand{\anh}{c^{\vphantom{\dagger}}}
 \newcommand{\numb}{n^{\vphantom{\dagger}}}

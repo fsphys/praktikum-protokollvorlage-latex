@@ -43,7 +43,7 @@
 
 \usepackage{amsmath}				% lots of math packages
 \usepackage{amssymb}				% ... even more math packages
-\usepackage{mathtools}				% ...
+%\usepackage{mathtools}				% ...
 %\usepackage{bbm}				% blackboard style fonts. You may prefer the provided \mathbbm{R} to ordinary \mathbb{R}.
 \usepackage{upgreek}				% use $\uppi$ etc.
 \usepackage{nicefrac}				% use \nicefrac{1}{2} for inline text, if you want
@@ -51,6 +51,7 @@
 {siunitx}					% package for units. Use \si{\ampere} or \SI{0.3}{\angstrom}.
 \sisetup{per-mode=fraction}			% style of writing units
 \sisetup{separate-uncertainty=true}		% to allow for $\pm ...$ as uncertainty instead of 0.34(12)
+\usepackage[version=3]{mhchem}			% to nicely write chemcial elements (e.g. \ce{^{227}_{90}Th+})
 
 \usepackage{vmargin}				% Adjust margins in a simple way (is used below).
 \usepackage{fancyhdr}				% Define simple page headings (is used below).
