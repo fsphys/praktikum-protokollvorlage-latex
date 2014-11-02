@@ -1,4 +1,4 @@
-# Protokollvorlage für das physikalische Anfängerpraktikum am KIT (v1.0.0)
+# Protokollvorlage für das physikalische Anfängerpraktikum am KIT (v1.1.0)
 
 The repository consists of three branches:
 * **master**: contains only the template.
