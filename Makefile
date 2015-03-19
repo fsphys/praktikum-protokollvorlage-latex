@@ -14,4 +14,4 @@ deckblatt.pdf: deckblatt.tex lit.bib data.tex $(shell find chap -type f) $(shell
 pdf: main.pdf
 
 clean:
-	rm *.aux *.log *.out *.bbl *.blg *.toc *.pdf
+	rm *.aux *.log *.out *.bbl *.blg *.toc *.lof *.lot *.pdf

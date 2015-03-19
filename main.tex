@@ -1,5 +1,6 @@
 \documentclass{include/protokollclass}
 % Main File - Based on protokollclass.cls
+% Comments are mostly in English and some in German (concerning the Praktikum)
 % ---------------------------------------------------------------------------------------
 % Further files in folder :
 %  - include/cmds.tex (for macros and additional commands)
@@ -16,9 +17,9 @@
 
 
 
-%% --------------------------------
-%% | Settings for word separation |
-%% --------------------------------
+%% --------------------------------------
+%% |    Settings for word separation    |
+%% --------------------------------------
 % Help for separation:
 % In german package the following hints are additionally available:
 % "- = Additional separation
@@ -28,14 +29,15 @@
 % "" = Separation without a hyphenation (e.g. und/""oder)
 
 % Describe separation hints here:
-\hyphenation{
-über-nom-me-nen an-ge-ge-be-nen
-%Pro-to-koll-in-stan-zen
-%Ma-na-ge-ment  Netz-werk-ele-men-ten
-%Netz-werk Netz-werk-re-ser-vie-rung
-%Netz-werk-adap-ter Fein-ju-stier-ung
-%Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
-%Kon-troll-in-stanz
+\hyphenation
+{
+	über-nom-me-nen an-ge-ge-be-nen
+	%Pro-to-koll-in-stan-zen
+	%Ma-na-ge-ment  Netz-werk-ele-men-ten
+	%Netz-werk Netz-werk-re-ser-vie-rung
+	%Netz-werk-adap-ter Fein-ju-stier-ung
+	%Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+	%Kon-troll-in-stanz
 }
 
 
@@ -50,60 +52,60 @@
 %\setboolean{chapResetPageNumb}{false}
 % um das Einbinden der Kapitelnummer in der Seitenzahl zu unterbinden
 %\setboolean{chapWiseNumb}{false}
-% english oder ngerman (new german für neue deutsche Rechtschreibung statt german)
+% english or ngerman (new german für neue deutsche Rechtschreibung statt german)
 \SelectLanguage{ngerman}
 
 
 
 
 
-%% ------------------------
-%% |    Main Document     |
-%% ------------------------
+%% -----------------------
+%% |    Main Document    |
+%% -----------------------
 \begin{document}
 	% Titelseite und ToC
 	\FrontMatter
-	
+
 	\input{include/titlepage} % \cleardoublepage
-	
+
 	\begingroup \let\clearpage\relax % in order to avoid listoffigures and listoftables on new pages
 	\tableofcontents
 	\listoffigures
 	\listoftables
 	\endgroup
 	%\cleardoublepage
-	
-	
-	
+
+
+
 	% eigentlicher Inhalt
 	\MainMatter
-	
+
 	\chapter{Vorbereitungen (von \namea)}
 	\input{./chap/chapter1.tex} %\cleardoublepage
 	\chapter{Vorbereitungen (von \nameb)}
 	\input{./chap/chapter2.tex} %\cleardoublepage
-	
+
 	\emptychapter{Messprotokoll}{3} % Usage: \emptychapter{name of the chapter}{page displayed in toc}
-	
+
 	\chapter{Auswertung}
 	\input{./chap/chapter3.tex} %\cleardoublepage
-	
+
 	% Anhang für mehr oder weniger interessante Rechnungen etc.
 	\Appendix
 	\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % damit der Anhang im ToC ohne Nummer erscheint. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
 	\input{./chap/appendix.tex} %\cleardoublepage
-	
-	
-	
+
+
+
 	% BibTeX
 	\TheBibliography
-	
+
 	%%% BIBTEX
 	% Use if you want citations to appear even if they are not referenced to: \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
 	%\nocite{*}
 	\bibliographystyle{babalpha}
 	\bibliography{lit.bib}
-	
+
 	%%% THEBIBLIOGRAPHY
 	%\begin{thebibliography}{000}
 	%	\bibitem{ident}Eintrag ins Literaturverzeichnis
