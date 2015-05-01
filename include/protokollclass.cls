@@ -54,6 +54,7 @@
 {siunitx}								% package for units. Use \si{\ampere} or \SI{0.3}{\angstrom}.
 \sisetup{per-mode=fraction}				% style of writing units
 \sisetup{separate-uncertainty=true}		% to allow for $\pm ...$ as uncertainty instead of 0.34(12)
+\sisetup{locale=DE} 				% use \cdot instead of \times for floating point numbers
 \usepackage[version=3]{mhchem}			% to nicely write chemcial elements (e.g. \ce{^{227}_{90}Th+})
 
 \usepackage{vmargin}					% Adjust margins in a simple way (is used below).
