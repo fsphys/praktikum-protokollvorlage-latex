@@ -4,31 +4,14 @@ Da die Versuche besonders zeitaufwändig sind, wird darauf verzichtet, alle Mess
 \subsection{Einsatzspannung}
 Die Spannung des Zählrohrs wird langsam erhöht, gleichzeitig wird die Zählrate gemessen. Der in den Vorbereitungen erläuterte Bereich, in dem die Zählrate gleichmäßig ansteigt, ist in diesem Versuchsaufbau schwierig zu messen. Hier, wie auch in der weiteren Auswertung, wird ein Mittelwert aus den mit \textit{CASSYLAB} aufgenommen Einzelmessungen erzeugt. Die gemessenen Werte enthält Tab \ref{tab:ii_1p1}; eine Auftragung der Zählrate über die Spannung zeigt Abb. \ref{fig:ii_1p1}.
 
-\begin{table}[tb]
-	\centering
-	\caption{Messung der Zählrate über die Einsatzspannung (Aufg 1.1)}
-	\label{tab:ii_1p1}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_1p1}
-\end{table}
+\xtable{tb}{ii_1p1}{Messung der Zählrate über die Einsatzspannung}{(Aufg 1.1)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_1p1.eps}
-	\caption{Auftragung der Zählrate über die Einsatzspannung (Aufg 1.1)}
-	\label{fig:ii_1p1}
-\end{figure}
+\xfigure{tb}{1.0}{ii_1p1}{Auftragung der Zählrate über die Einsatzspannung}{(Aufg 1.1)}
 
 \subsection{Untergrundrate}
 Die Untergrundrate der drei Zählrohre wird durch eine Messung der Zählrate über eine Dauer von $\SI{800}{s}$ ohne die Störung durch die radioaktiven Präparate gemessen. Die erhaltenen Untergrundraten enthält Tab. \ref{tab:ii_1p2}.
 
-\begin{table}[tb]
-	\centering
-	\caption{Untergrundrate der drei Versuchsaufbauten (Aufg 1.2)}
-	\label{tab:ii_1p2}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_1p2}
-\end{table}
+\xtable{tb}{ii_1p2}{Untergrundrate der drei Versuchsaufbauten}{(Aufg 1.2)}
 
 \subsection{Totzeit}
 Wie in den Vorbereitungen erwähnt, wird während der Totzeit nach einer Registrierung kein weiteres Teilchen gemessen. Zunächst soll noch der Zusammenhang der gemessenen, der tatsächlichen Zählrate und der Totzeit ermittelt werden.\\
@@ -51,13 +34,7 @@ t_\mathrm{tot} = \frac{T}{N_{1+2}}\left(1+\sqrt{\frac{(N_{1+2}-N_1)(N_{1+2}-N_2)
 \end{equation}
 Einsetzen der Messwerte der drei Versuchsaufbauten liefert die entsprechenden Totzeiten. Die Ergebnisse enthält Tab. \ref{tab:ii_1p3}.
 
-\begin{table}[tb]
-	\centering
-	\caption{Totzeiten der drei Versuchsaufbauten (Aufg 1.3)}
-	\label{tab:ii_1p3}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_1p3}
-\end{table}
+\xtable{tb}{ii_1p3}{Totzeiten der drei Versuchsaufbauten}{(Aufg 1.3)}
 
 \subsection{Abstandsgesetz}
 Zur Verifikation des Abstandsgesetzes wird die Zählrate in Abhängigkeit vom Abstand Präparat-Zählrohr gemessen. Die erhaltenen Werte mitsamt einer Abweichung von $\SI{1}{mm}$ für die Distanzen und einer Standardabweichung der Zählraten enthält Tab. \ref{tab:ii_1p4}. Eine Auftragung dieser zeigt Abb. \ref{fig:ii_1p4_error}. Da hier keine detaillierte Fehlerbetrachtung durchgeführt werden soll, werden auf die Fehler in der logarithmischen Auftragung verzichtet. Eine lineare Regression dieser erfolgt ebenfalls nur auf Basis der Bestwerte. Beide zeigt Abb. \ref{fig:ii_1p4_log}. Also Regressions-Parameter für die logarithmische Anpassung findet man:
@@ -66,27 +43,11 @@ Zur Verifikation des Abstandsgesetzes wird die Zählrate in Abhängigkeit vom Ab
 \end{equation}
 Hierbei wurde der 4. Messpunkt bei notiertem Abstand $d = \SI{30}{mm}$ als Ausreißer eingestuft und nicht in die Regression mit einbezogen. Die Distanzen wurden aus den gemessenen Daten um $\SI{5}{mm}$ nach oben korrigiert, da der Abstand der Spitze des Aluminiumstifs zur Stirnfläche etwa $\SI{1}{mm}$ und der Abstand von der Stirnfläche zum Präparat $\SI{5}{mm}$ betragen. Weiter wurde auf die gemessenen Zählraten die Korrektur aus \eqref{eq:ii_1p2_korrektur} angewandt und anschließend noch die Untergrundzählrate abgezogen (jeweils unter Verwendung der Nullrate und der Totzeit des entsprechenden Versuchsaufbaus).
 
-\begin{table}[tb]
-	\centering
-	\caption{Messung der Zählrate bei verschiedenen Abständen (Aufg 1.4)}
-	\label{tab:ii_1p4}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_1p4}
-\end{table}
+\xtable{tb}{ii_1p4}{Messung der Zählrate bei verschiedenen Abständen}{(Aufg 1.4)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=0.9]{fig/ii_1p4_error.eps}
-	\caption{Auftragung der Zählrate über die Distanz (Aufg 1.4)}
-	\label{fig:ii_1p4_error}
-\end{figure}
+\xfigure{tb}{0.9}{ii_1p4_error}{Auftragung der Zählrate über die Distanz}{(Aufg 1.4)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_1p4_log.eps}
-	\caption{Logarithmische Auftragung der Zählrate über die Distanz mit linearer Anpassung (Aufg 1.4)}
-	\label{fig:ii_1p4_log}
-\end{figure}
+\xfigure{tb}{1.0}{ii_1p4_log}{Logarithmische Auftragung der Zählrate über die Distanz mit linearer Anpassung}{(Aufg 1.4)}
 
 \FloatBarrier
 \section{Absorptionsmessungen}
@@ -113,12 +74,7 @@ Dazu führt man folgende Rechnung durch: Man legt die Quelle in den Ursprung und
 \end{align}
 Mit Gl. \eqref{eq:ii_2_abh} folgt so die Relation aus Gl. \eqref{eq:ii_2_winkel}. Mithilfe sämtlicher Korrekturen erhält man nun den Bestand der $\upalpha$-Teilchen in Abhängigkeit von der durchdrungenen Materie. Die berechneten Werte enthält Tab. \ref{tab:ii_2}. Eine Auftragung ohne Raumwinkel-Korrektur befindet sich in Abb. \ref{fig:ii_2_plota}; eine Auftragung mit Raumwinkel-Korrektur und einer linearen Regression der ersten Messpunkte (jener im annähernd linearen Bereich) findet sich in Abb. \ref{fig:ii_2_plotb}. Die Regression wurde aus folgenden Gründen so gewählt.
 
-\begin{figure}[tb]
-\centering
-\includegraphics[scale=1.5]{fig/ii_2_dem.eps}
-\caption{Abnahme der $\upalpha$-Teilchen $N(x)$ über die durchdrungene Materie $x$ (aus \cite[S. 90]{Dem10}).}
-\label{fig:ii_2_dem}
-\end{figure}
+\xfigure{tb}{1.2}{ii_2_dem}{Abschirmung der $\upalpha$-Teilchen:}{$N(x)$ ist hierbei die Zahl der Teilchen, die die Materie der Dicke $x$ durchdrungen haben (aus \cite[S. 90]{Dem10})}
 
 Abb. \ref{fig:ii_2_dem} zeigt die voraus gesagte Abnahme der $\upalpha$-Teilchen beim Durchdringen der Materie. Die Teilchenzahl bleibt zunächst konstant, nimmt dann rasch ab und bleibt dann konstant bei 0. Die entsprechend definierte mittlere Reichweite ist in dieser Abb. ebenfalls  eingezeichnet. Den genannten Kurvenverlauf findet man auch bei der Auftragung der hier gemessenen Werte (s. Abb. \ref{fig:ii_2_plotb}). Man fittet an die Werte im nicht konstanten Bereich eine Gerade an und sucht den Punkt, an dem sie auf die Hälfte des Wertes abgefallen ist, der für kleine Abstände vorliegt (verwende hier 11. Messpunkt bei ungefähr $\SI{4}{mm}$), und findet so die mittlere Reichweite $\anglemean R$. Als Geradengleichung ergibt sich:
 \begin{equation}
@@ -130,27 +86,11 @@ welche ebenfalls in genannter Abb. \ref{fig:ii_2_plotb} eingezeichnet ist. Die m
 \end{equation}
 Die letzten drei Messwerte wurden bei der Regression vernachlässigt, da sie aufgrund der Hintergrundstrahlung zu starke statistische Abweichungen aufweisen.
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_2_plota.eps}
-	\caption{Zählrate der $\upalpha$-Teilchen am Zählrohr (Aufg. 2).}
-	\label{fig:ii_2_plota}
-\end{figure}
+\xfigure{tb}{1.0}{ii_2_plota}{Zählrate der $\upalpha$-Teilchen am Zählrohr}{(Aufg. 2)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_2_plotb.eps}
-	\caption{Abnahme der $\upalpha$-Teilchen bei Durchgang durch die Materie der Strecke $x$ mit Raumwinkel-Korrektur und lin. Regression der ersten Messpunkte (annähernd lin. Bereich) (Aufg. 2).}
-	\label{fig:ii_2_plotb}
-\end{figure}
+\xfigure{tb}{1.0}{ii_2_plotb}{Abnahme der $\upalpha$-Teilchen bei Durchgang durch die Materie:}{$x$ ist hierbei die Strecke. Die Daten beinhalten die Raumwinkel-Korrektur und die Gerade zeigt eine lineare Regression der ersten Messpunkte (des annähernd linearen Bereichs) (Aufg. 2).}
 
-\begin{table}[tb]
-	\centering
-	\caption{Abnahme der $\upalpha$-Teilchen bei Durchgang durch die Materie mit ($\alpha$) und ohne ($\alpha'$) Raumwinkel-Korrektur (Aufg. 2)}
-	\label{tab:ii_2}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_2}
-\end{table}
+\xtable{tb}{ii_2}{Abnahme der $\upalpha$-Teilchen bei Durchgang durch die Materie:}{$\alpha$ bezeichnet die unkorrigierten Daten und $\alpha'$ die Daten mit einer Raumwinkel-Korrektur (Aufg. 2).}
 
 \FloatBarrier
 \subsection{\texorpdfstring{$\upbeta$}{Beta}-Absorption}
@@ -189,105 +129,44 @@ W_\mathrm{Gr} = \SI{211}{keV},
 \end{equation}
 was in etwa in der Größenordnung der Literatur-Werte liegt ($\SI{2284}{keV}$, bzw. $\SI{540}{keV}$).
 
-\begin{table}[tb]
-	\centering
-	\caption{Zahl der $\upbeta$-Teilchen nach Durchgang der Dicke $d$ (Aufg. 3).}
-	\label{tab:ii_3}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_3}
-	\vspace{8mm}
-\end{table}
+\xtable{tb}{ii_3}{Zahl der $\upbeta$-Teilchen nach Durchgang durch Materie:}{$d$ bezeichnet hier die Dicke des Materials. (Aufg. 3)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.5]{fig/ii_3_dem.eps}
-	\caption{Abnahme der $\upbeta$-Teilchen $N(x)$ über die durchdrungene Materie $x$ (aus \cite[S. 92]{Dem10}).}
-	\label{fig:ii_3_dem}
-\end{figure}
+\xfigure{bt}{1.5}{ii_3_dem}{Abnahme der $\upbeta$-Teilchen beim Durchdringen von Materie:}{$N(x)$ ist die Zahl der $\upbeta$-Teilchen, die die Materie der Dicke $x$ durchdringen können (aus \cite[S. 92]{Dem10}).}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_3_plota.eps}
-	\caption{Auftragung der Zählrate $N(x)$ über die Absorberdicke $x$ (Aufg. 3).}
-	\label{fig:ii_3_plota}
-\end{figure}
+\xfigure{tb}{1.0}{ii_3_plota}{Auftragung der Zählrate über die Absorberdicke:}{$N(x)$ bezeichnet hier die Zählrate und $x$ ist die Absorberdicke (Aufg. 3).}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_3_plotb.eps}
-	\caption{Logarithmische Auftragung der Zählrate $\log(N(x))$ über die Absorberdicke $x$ mit lin. Regression des Bereiches großer $x$ (Aufg. 3).}
-	\label{fig:ii_3_plotb}
-\end{figure}
+\xfigure{tb}{1.0}{ii_3_plotb}{Logarithmische Auftragung der Zählrate über die Absorberdicke:}{$\log N(x)$ bezeichnet hier den Logarithmus der Zählrate und $x$ ist die Absorberdicke. (Aufg. 3)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_3_plotc.eps}
-	\caption{Logarithmische Au
-	ftragung der Zählrate der Teilchen geringer Reichweite $\log(N(x))$ über die Absorberdicke $x$ mit lin. Regression (Aufg. 3).}
-	\label{fig:ii_3_plotc}
-\end{figure}
+\xfigure{tb}{1.0}{ii_3_plotc}{Logarithmische Auftragung der Zählrate der Teilchen geringer Reichweite:}{$\log N(x)$ bezeichnet hier den Logarithmus der Zählrate und $x$ ist die Absorberdicke. Die eingezeichnete Funktion stellt eine lineare Regression dar (Aufg. 3).}
 
 Zuletzt bleibt noch die Frage danach, in welchem Verhältnis die beiden Zerfallsarten vorliegen werden. Eine Rechnung mit üblichen Modellen der physikalischen Chemie befindet sich in Anhang A.
 Die Rechnung ergibt, dass das Verhältnis von Yttrium-Zerfall zu Strontium-Zerfall ungefähr 1 ist, genauer $\frac{k_\mathrm{Y}}{k_\mathrm{Y} - k_\mathrm{Sr}}$. Der Rechnung entnimmt man weiter, dass sich das System diesem Zustand über die Zeit gemäß eines exponentiellen, beschränkten Wachstums annähert.
 
 \FloatBarrier
 \subsection{\texorpdfstring{$\upgamma$}{Gamma}-Absorption}
-\subsubsection{Blei-Absorption von Co60-Strahlung}
+\subsubsection{Blei-Absorption von \texorpdfstring{\ce{^{60}Co}}{Co60}-Strahlung}
 Die gemessenen Werte werden wieder gemäß Gl. \eqref{eq:ii_1p2_korrektur} sowie um die Nullrate korrigiert und anschließend doppeltlogarithmisch aufgetragen. Die berechneten Werte enthält Tab. \ref{tab:ii_4p1}; die Auftragung mit linearer Regression zeigt Abb. \ref{fig:ii_4p1}. Die Regression ergibt als Fit-Parameter:
 \begin{equation}
 \log\left(\frac{N}{\si{\per\second}}\right) = (\numb{-0,35(6)}) \cdot \log\left(\frac{d}{\si{mm}}\right) + (\num{2,71(13)}).
 \end{equation}
 
-\begin{table}[tb]
-	\centering
-	\caption{Korrigierte Zählraten bei verschiedenen Absorberdicken (Aufg. 4.1)}
-	\label{tab:ii_4p1}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_4p1}
-\end{table}
+\xtable{tb}{ii_4p1}{Korrigierte Zählraten bei verschiedenen Absorberdicken}{(Aufg. 4.1)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_4p1.eps}
-	\caption{Doppeltlogarithmische Auftragung der korrigierten Werte mit linearer Regression (Aufg. 4.1)}
-	\label{fig:ii_4p1}
-\end{figure}
+\xfigure{tb}{1.0}{ii_4p1}{Doppeltlogarithmische Auftragung der korrigierten Werte mit linearer Regression}{(Aufg. 4.1)}
 
-\subsubsection{Blei-Absorption von Cs137-Strahlung}
+\subsubsection{Blei-Absorption von \texorpdfstring{\ce{^{137}Cs}}{Cs137}-Strahlung}
 Das Verfahren ist analog zu dem aus Aufgabenteil 4.1. Die berechneten Werte enthält Tab. \ref{tab:ii_4p2}; die Auftragung mit linearer Regression zeigt Abb. \ref{fig:ii_4p2}. Die Regression ergibt als Fit-Parameter:
 \begin{equation}
 \log\left(\frac{N}{\si{\per\second}}\right) = (\numb{-0,73(17)}) \cdot \log\left(\frac{d}{\si{mm}}\right) + (\numb{3,0(4)}).
 \end{equation}
 
-\begin{table}[tb]
-	\centering
-	\caption{Korrigierte Zählraten bei verschiedenen Absorberdicken (Aufg. 4.2).}
-	\label{tab:ii_4p2}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_4p2}
-\end{table}
+\xtable{tb}{ii_4p2}{Korrigierte Zählraten bei verschiedenen Absorberdicken}{(Aufg. 4.2)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_4p2.eps}
-	\caption{Doppeltlogarithmische Auftragung der korrigierten Werte mit linearer Regression (Aufg. 4.2).}
-	\label{fig:ii_4p2}
-\end{figure}
+\xfigure{tb}{1.0}{ii_4p2}{Doppeltlogarithmische Auftragung der korrigierten Werte mit linearer Regression}{(Aufg. 4.2)}
 
 \subsubsection{Absorption verschiedener Materialien}
 Da im Versuch die absolute Strahlung ohne Absorber nicht gemessen wurde, muss sich hier auf absolute Angaben der Strahlung beschränkt werden. Die gemessenen und korrigierten Werte enthält Tab. \ref{tab:ii_4p3}. Eine Auftragung über die Dichte zeigt Abb. \ref{fig:ii_4p3}.
 
-\begin{table}[tb]
-	\centering
-	\caption{Strahlintensität bei verschiedenen Abschirmmaterialien (Aufg. 4.3).}
-	\label{tab:ii_4p3}
-	\rowcolors{3}{gray!10}{white}
-	\include{tab/ii_4p3}
-\end{table}
+\xtable{tb}{ii_4p3}{Strahlintensität bei verschiedenen Abschirmmaterialien}{(Aufg. 4.3)}
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[scale=1.0]{fig/ii_4p3.eps}
-	\caption{Auftragung der gemessenen Strahlintensitäten über die Dichten der Abschirmmaterialien (Aufg. 4.3).}
-	\label{fig:ii_4p3}
-\end{figure}
+\xfigure{tb}{1.0}{ii_4p3}{Auftragung der gemessenen Strahlintensitäten über die Dichten der Abschirmmaterialien}{(Aufg. 4.3)}
