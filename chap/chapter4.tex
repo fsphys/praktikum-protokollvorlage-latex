@@ -38,17 +38,33 @@ Als Beispiel:
 	\begin{figure}[tb]
 	    \centering
 	    \includegraphics[scale=0.8]{fig/vorbereitung_abbildung123.eps}
-	    \caption{Beschreibung der Abbildung.}
+	    \xcaption{Absorption von Alpha-Teilchen:}{Detaillierte Beschreibung\
+	              von der zu sehenden Abbildung (aus \cite[S. 507]{dem}).}
 	    \label{fig:vorbereitung_abbildung123}
 	\end{figure}
 \end{verbatim}
-Die \verb|figure|-Umgebung ist zum Einbinden von Abbildungen gedacht. Der Befehl \verb|\centering| zentriert die Abbildung mittig auf der Seite. Mit \verb|\includegraphics{...}| wird die eigentliche Abbildung als Datei eingebunden, dabei ist die Angabe des Pfades aus Sicht von \verb|main.tex| zu wählen. Der Teil \verb|[scale=0.8]| ist optional und kann weggelassen werden. Die Zahl hinter dem Gleichheitszeichen ist eine Fließkommazahl und kann modifiziert werden, um die Größe des Bildes zu ändern. Mit dem Befehl \verb|\caption{...}| wird eine Bildunterschrift erzeugt. Es ist möglich, den Befehl oberhalb von \verb|\includegraphics{...}| einzufügen, um so ein Bildüberschrift zu erzeugen. Auch wenn es nicht Ziel dieses Textes ist, über die Formalien beim Schreiben eines wissenschaftlichen Textes aufzuklären, sei dennoch schnell angemerkt: Man hat stets Abbildungs\textbf{unter}schrift und Tabellen\textbf{über}schriften zu verwenden.
+Die \verb|figure|-Umgebung ist zum Einbinden von Abbildungen gedacht. Der Befehl \verb|\centering| zentriert die Abbildung mittig auf der Seite. Mit \verb|\includegraphics{...}| wird die eigentliche Abbildung als Datei eingebunden, dabei ist die Angabe des Pfades aus Sicht von \verb|main.tex| zu wählen. Der Teil \verb|[scale=0.8]| ist optional und kann weggelassen werden. Die Zahl hinter dem Gleichheitszeichen ist eine Fließkommazahl und kann modifiziert werden, um die Größe des Bildes zu ändern. Mit dem Befehl \verb|\xcaption{<short description>}| \verb|{<long description>}| wird eine Bildunterschrift erzeugt. Es ist möglich, den Befehl oberhalb von \verb|\includegraphics{...}| einzufügen, um so ein Bildüberschrift zu erzeugen. Auch wenn es nicht Ziel dieses Textes ist, über die Formalien beim Schreiben eines wissenschaftlichen Textes aufzuklären, sei dennoch schnell angemerkt: Man hat stets Abbildungs\textbf{unter}schrift und Tabellen\textbf{über}schriften zu verwenden.
 
-Der Befehl \verb|\label{key}| ist ebenfalls optional und dient zum Verweisen auf eine Abbildung. So kann mit Hilfe von \verb|\ref{key}| die Nummer der Abbildung erzeugt werden. Somit muss man bei einem Verweis nicht immer etwas ändern, falls sich die Nummer der Abbildung ändert. Als \verb|key| kann grundsätzlich alles verwendet werden, nur mit einigen Sonderzeichen muss man vorsichtig sein. Der \verb|key| sollte außerdem eindeutig sein, d.h.~er sollte nicht für mehrere Abbildungen zugleich verwendet werden. Es üblich den Schlüssel stets mit \verb|fig:|, \verb|tab:| oder \verb|eq:| zu beginnen, je nach dem worum es sich in dem Verweis gerade handelt. Dies ist jedoch nicht zwingend notwendig.
+Der Befehl \verb|\label{key}| ist ebenfalls optional und dient zum Verweisen auf eine Abbildung. So kann mit Hilfe von \verb|\ref{key}| die Nummer der Abbildung erzeugt werden. Somit muss man bei einem Verweis nicht immer etwas ändern, falls sich die Nummer der Abbildung ändert. Als \verb|key| kann grundsätzlich alles verwendet werden, nur mit einigen Sonderzeichen muss man vorsichtig sein. Der \verb|key| sollte außerdem eindeutig sein, d.h.~er sollte nicht für mehrere Abbildungen zugleich verwendet werden. Es ist üblich den Schlüssel stets mit \verb|fig:|, \verb|tab:| oder \verb|eq:| zu beginnen, je nach dem worum es sich in dem Verweis gerade handelt. Dies ist jedoch nicht zwingend notwendig.
 
 Die Buchstaben \verb|tb| in eckigen Klammern nach \verb|\begin{figure}| dient zur Angabe der Positionierung auf der Seite. LaTeX übernimmt das Anordnen der Abbildungen und Tabellen selbst. In diesem Fall würde LaTeX versuchen die Abbildung zunächst an den Anfang der Seite (\textbf{t}op) und, falls das nicht geht, an das Ende der Seite (\textbf{b}ottom) zu setzen. Viele Studenten neigen dazu, LaTeX mit Hilfe der Option \verb|h| oder noch stärkeren Befehlen dazu zwingen zu wollen, Abbildungen auf die Mitte der Seite zu setzen (an den Ort, von wo aus gerade verwiesen wird). Dies ist ebenfalls unter wissenschaftlichen Texten unüblich. Abbildungen sollten stets am Anfang oder am Ende einer Seite stehen. Möchte man sicher stellen, dass gewisse Abbildungen bis zu einem bestimmten Punkt eingebunden sind und nicht in einer viel späteren \verb|section| erscheinen, kann man an dieser Stellen den Befehl \verb|\FloatBarrier| verwenden.
 
 Als Bildformat kommen die meisten gängigen Dateiformate in Frage, wie z.B. \verb|pdf|, \verb|ps|, \verb|eps|, \verb|png|, \verb|bmp| oder \verb|jpg|. Es empfiehlt sich natürlich stets die Verwendung von Vektorgrafiken der von Rastergrafiken vorzuziehen, sofern dies möglich ist. Man kann eine Abbildung auch ohne Endung angeben und mit verschiedenen Endungen im entsprechenden Ordner hinterlegen und LaTeX sucht sich aus, welches Format es nutzen möchte.
+
+Der Befehl \verb|xfigure|, den die Vorlage in der Datei \verb|./include/cmds.tex| mit sich bringt, fasst die obigen Befehle in einem kurzen Befehl mit vielen Optionen zusammen:
+
+\begin{verbatim}
+	\xfigure{<pos>}{<scale>}{<name of file>}{<short caption>}{<long caption>}
+\end{verbatim}
+
+Der name der Datei (im Ordner \verb|./fig/| und zwar ohne seine Endung; LaTeX bestimmt die Endung selbst) dient auch als Referenzname in der Form \verb|\ref{fig:<name of file>}|. Damit lassen sich die obigen Befehle kurz schreiben:
+
+\begin{verbatim}
+	\xfigure{tb}{0.8}{vorbereitung_abbildung123}\
+	        {Absorption von Alpha-Teilchen:}\
+	        {Detaillierte Beschreibung von der zusehenden Abbildung ...}
+\end{verbatim}
+
 
 \subsubsection{Tabellen}
 Als Beispiel:
@@ -75,6 +91,13 @@ Die Befehle sind fast alle dieselben wie bei der \verb|figure|-Umgebung, hier ta
 Der Parameter in geschwungenen Klammern hinter dem Beginn der Umgebung gibt die Zahl und die Orientierung der Spalten an (hier sind es drei und sie sind alle rechtsbündig orientiert). Von einer Spalte zur nächsten springt man mit dem Kaufmannsund (\verb|&|) und mit zwei Backslashes (\verb|\\|) springt man in eine neue Reihe.
 
 Der Befehl \verb|\rowcolor...| dient zur Einfärbung verschiedener Zeilen, was die Übersichtlichkeit fördert. Durch einfügen eines senkrechten Striches (aka. Pipe: \verb&|&) zwischen den Angaben zur Orientierung der Spalten können senkrechte Linien in den Tabellen erzeugt werden. Durch \verb|\hline| können waagerechte Striche zwischen verschiedenen Reihen eingefügt werden. Auch hier wird wieder darauf verwiesen, dass überlicherweise eine Tabelle nur über die in obigem Minimalbeispiel auftauchenden waagerechten Trennlinien über und unter der ersten Zeile sowie am Ende verwendet werden.  Alles andere verwirrt eher und sorgt nicht für mehr Übersicht. Die Linien werden hier mit den erweiterten Befehlen \verb|\toprule|, \verb|\midrule| und \verb|\bottomrule| aus dem \verb|booktabs|-Paket verwendet. Diese stellen zusätzlich die Linienbreite und die Abstände ein.
+
+Auch hier gibt es wieder einen verkürzten Befehl:
+\begin{verbatim}
+	\xtable{<pos>}{<name of file>}{<short caption>}{<long caption>}
+\end{verbatim}
+Hier ist wieder der Name der \verb|.tex|-Datei im Ordner \verb|./tab/| ohne die Dateiendung selbst zu verwenden.
+
 
 \subsection{Einheiten und wissenschaftliche Notation}
 Einheiten unterliegen typographischen Regeln, deren Einhaltung das Paket \verb|siunitx| komfortabel möglich macht. Außerdem beinhaltet es ein paar interessante Zusatzfunktionen. Einheitensymbole werden mit aufrechten Kleinbuchstaben gesetzt, Ausnahmen bestätigen die Regel: ist die Einheit von einem Namen abgeleitet, wird der erste Buchstabe groß geschrieben. Außerdem darf man für Liter auch ein großes L verwenden, damit es nicht mit einer Eins verwechselt wird.
