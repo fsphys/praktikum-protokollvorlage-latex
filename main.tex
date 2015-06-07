@@ -1,14 +1,14 @@
 \documentclass{include/protokollclass}
 % Main File - Based on protokollclass.cls
 % Comments are mostly in English (and some in German, concerning the Praktikum)
-% ---------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % Further files in folder:
 %  - include/cmds.tex (for macros and additional commands)
 %  - data.tex (für Angaben zum Praktikumsprotokoll)
 %  - include/kitlogo.pdf (for titlepage)
 %  - lit.bib (bibtex bibliography database)
 %  - include/titlepage.tex (for layout of titelpage)
-% ---------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % Useful Supplied Packages:
 % amsmath, amssymb, mathtools, bbm, upgreek, nicefrac,
 % siunitx, varioref, booktabs, graphicx, tikz, multicol
@@ -31,20 +31,21 @@
 % Describe separation hints here:
 \hyphenation
 {
-	über-nom-me-nen an-ge-ge-be-nen
-	%Pro-to-koll-in-stan-zen
-	%Ma-na-ge-ment  Netz-werk-ele-men-ten
-	%Netz-werk Netz-werk-re-ser-vie-rung
-	%Netz-werk-adap-ter Fein-ju-stier-ung
-	%Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
-	%Kon-troll-in-stanz
+    über-nom-me-nen an-ge-ge-be-nen
+    %Pro-to-koll-in-stan-zen
+    %Ma-na-ge-ment  Netz-werk-ele-men-ten
+    %Netz-werk Netz-werk-re-ser-vie-rung
+    %Netz-werk-adap-ter Fein-ju-stier-ung
+    %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+    %Kon-troll-in-stanz
 }
 
 
 
 
 
-% um die Titelseite per PDF-reader auszufüllen. Vorgefertigte Daten können unter 'misc/data.tex' modifiziert werden.
+% um die Titelseite per PDF-reader auszufüllen. Vorgefertigte Daten
+% können unter 'misc/data.tex' modifiziert werden.
 %\setboolean{forminput}{true}
 % um die Anmerkungen zu den Textfeldern anzeigen zu lassen
 %\setboolean{showannotations}{true}
@@ -63,46 +64,50 @@
 %% |    Main Document    |
 %% -----------------------
 \begin{document}
-	% Titlepage und ToC
-	\FrontMatter
+    % Titlepage und ToC
+    \FrontMatter
 
-	\input{include/titlepage} % \cleardoublepage
+    \input{include/titlepage} %\cleardoublepage
 
-	\begingroup \let\clearpage\relax % in order to avoid listoffigures and listoftables on new pages
-	\tableofcontents
-	\listoffigures
-	\listoftables
-	\endgroup
-	%\cleardoublepage
-
-
-
-	% Contents
-	\MainMatter
-
-	\emptychapter{Messprotokoll}{} % usage: \emptychapter{name of the chapter}{page displayed in toc}
-
-	\chapter{Auswertung}
-	\input{./chap/chapter1.tex} %\cleardoublepage
-
-	% appendix for more or less interesting calculations
-	\Appendix
-	\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % to make the appendix appear in ToC without number. \appendixname = Appendix or Anhang (depending on chosen language)
-	\input{./chap/appendix.tex} %\cleardoublepage
+    \begingroup \let\clearpage\relax    % in order to avoid listoffigures and
+    \tableofcontents                    % listoftables on new pages
+    \listoffigures
+    \listoftables
+    \endgroup
+    %\cleardoublepage
 
 
 
-	% Bibliography
-	\TheBibliography
+    % Contents
+    \MainMatter
 
-	% BIBTEX
-	% use if you want citations to appear even if they are not referenced to: \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
-	%\nocite{*}
-	\bibliographystyle{babalpha}
-	\bibliography{lit.bib}
+    \emptychapter{Messprotokoll}{}      % usage: \emptychapter{name of the 
+                                        %        chapter}{page displayed in toc}
 
-	% THEBIBLIOGRAPHY
-	%\begin{thebibliography}{000}
-	%	\bibitem{ident}Entry into Bibliography.
-	%\end{thebibliography}
+    \chapter{Auswertung}
+    \input{./chap/chapter1.tex} %\cleardoublepage
+
+    % appendix for more or less interesting calculations
+    \Appendix
+    \chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
+    % to make the appendix appear in ToC without number. \appendixname = 
+    % Appendix or Anhang (depending on chosen language)
+    \input{./chap/appendix.tex} %\cleardoublepage
+
+
+
+    % Bibliography
+    \TheBibliography
+
+    % BIBTEX
+    % use if you want citations to appear even if they are not referenced to: 
+    % \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
+    %\nocite{*}
+    \bibliographystyle{babalpha}
+    \bibliography{lit.bib}
+
+    % THEBIBLIOGRAPHY
+    %\begin{thebibliography}{000}
+    %    \bibitem{ident}Entry into Bibliography.
+    %\end{thebibliography}
 \end{document}
