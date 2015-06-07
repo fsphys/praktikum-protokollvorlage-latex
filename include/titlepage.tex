@@ -1,4 +1,4 @@
-% Koordinaten für den Hintergrundrahmen
+% coordinates for background border
 \newcommand{\diameter}{20}
 \newcommand{\xone}{-15}
 \newcommand{\xtwo}{160}
@@ -12,7 +12,7 @@
 
 
 \begin{titlepage}
-	% Hintergrundrahmen
+	% background border
 	\begin{tikzpicture}[overlay]
 	\draw[color=gray]  
 			(\xone mm, \yone mm)
@@ -24,7 +24,7 @@
 		-- (\xone mm, \yone mm);
 	\end{tikzpicture}
 	
-	% KIT-Logo
+	% KIT logo
 	\begin{textblock}{10}[0,0](4.5,2.5)
 		\includegraphics[width=.25\textwidth]{include/kitlogo.pdf}
 	\end{textblock}
@@ -95,7 +95,7 @@
 		\mytextfield{Durchgeführt am}{\durchgefuehrt}{2.53cm}{17pt}{TT.MM.JJ}{8}{Durchfuehrung}
 	\end{textblock}
 	
-	%querstrich
+	% Querstrich
 	\begin{textblock}{20}[0,0](0,7.9)\tiny\centering
 		Wird vom Betreuer ausgefüllt.
 	\end{textblock}
@@ -158,7 +158,7 @@
 	
 	
 	
-	% unterste Zeile über das KIT
+	% lowest text blocks concerning the KIT
 	\begin{textblock}{10}[0,0](4,16.8)
 		\tiny{KIT -- Universität des Landes Baden-Württemberg und nationales Forschungszentrum in der Helmholtz-Gemeinschaft}
 	\end{textblock}
