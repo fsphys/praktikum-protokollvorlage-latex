@@ -360,10 +360,8 @@
 
     \pagestyle{empty}
 
-    \fancypagestyle{plain}
-    % to ensure toc page style is really empty (it uses \thispagestyle{plain})
-    
-    {
+    \fancypagestyle{plain}{            % to ensure toc page style is really 
+                                       % empty (it uses \thispagestyle{plain})
         \fancyhf{}                     % clear all header and footer fields
         \fancyfoot{}                   % except the center
         \renewcommand{\headrulewidth}{0pt}
@@ -383,12 +381,10 @@
 
     \frontmatter \pagestyle{empty}
 
-    \fancypagestyle{plain}
-    % redefine chapter first page style, which is redefined by \FrontMatter
-
-    {
-        \fancyhf{}                 % clear all header and footer fields
-        \fancyfoot[C]{\thepage}    % except the center
+    \fancypagestyle{plain}{            % redefine chapter first page style,
+                                       % which is redefined by \FrontMatter
+        \fancyhf{}                     % clear all header and footer fields
+        \fancyfoot[C]{\thepage}        % except the center
         \renewcommand{\headrulewidth}{0pt}
         \renewcommand{\footrulewidth}{0pt}
     }
@@ -397,7 +393,7 @@
     \pagestyle{fancy}
     \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ %
                                              \thechapter.\ ##1}{}}
-    \lhead[\thepage]{\leftmark}\chead[]{}\rhead[Praktikumsprotokoll zum%
+    \lhead[\thepage]{\leftmark}\chead[]{}\rhead[Praktikumsprotokoll zum %
                                                 Versuch \versuch]{\thepage}
     \lfoot{}\cfoot{}\rfoot{}
     \ifthenelse{\boolean{chapWiseNumb}}
