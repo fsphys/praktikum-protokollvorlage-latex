@@ -1,14 +1,14 @@
 \documentclass{include/protokollclass}
 % Main File - Based on protokollclass.cls
 % Comments are mostly in English (and some in German, concerning the Praktikum)
-% ---------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % Further files in folder:
 %  - include/cmds.tex (for macros and additional commands)
 %  - data.tex (für Angaben zum Praktikumsprotokoll)
 %  - include/kitlogo.pdf (for titlepage)
 %  - lit.bib (bibtex bibliography database)
 %  - include/titlepage.tex (for layout of titelpage)
-% ---------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % Useful Supplied Packages:
 % amsmath, amssymb, mathtools, bbm, upgreek, nicefrac,
 % siunitx, varioref, booktabs, graphicx, tikz, multicol
@@ -31,20 +31,21 @@
 % Describe separation hints here:
 \hyphenation
 {
-	über-nom-me-nen an-ge-ge-be-nen
-	%Pro-to-koll-in-stan-zen
-	%Ma-na-ge-ment  Netz-werk-ele-men-ten
-	%Netz-werk Netz-werk-re-ser-vie-rung
-	%Netz-werk-adap-ter Fein-ju-stier-ung
-	%Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
-	%Kon-troll-in-stanz
+    über-nom-me-nen an-ge-ge-be-nen
+    %Pro-to-koll-in-stan-zen
+    %Ma-na-ge-ment  Netz-werk-ele-men-ten
+    %Netz-werk Netz-werk-re-ser-vie-rung
+    %Netz-werk-adap-ter Fein-ju-stier-ung
+    %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+    %Kon-troll-in-stanz
 }
 
 
 
 
 
-% um die Titelseite per PDF-reader auszufüllen. Vorgefertigte Daten können unter 'misc/data.tex' modifiziert werden.
+% um die Titelseite per PDF-reader auszufüllen. Vorgefertigte Daten
+% können unter 'misc/data.tex' modifiziert werden.
 %\setboolean{forminput}{true}
 % um die Anmerkungen zu den Textfeldern anzeigen zu lassen
 %\setboolean{showannotations}{true}
@@ -77,9 +78,9 @@
 
         \vspace{50px}
 
-        \large Anleitung und Erläuterungen zur LaTeX-Vorlage für
-Praktikumsprotokolle der physikalischen Anfängerpraktika der Fakultät für
-Physik, KIT.
+        \large Anleitung und Erläuterungen zur LaTeX-Vorlage für%
+               Praktikumsprotokolle der physikalischen Anfängerpraktika der%
+               Fakultät für Physik, KIT.
 
         \vspace{50px}
 
@@ -90,36 +91,39 @@ Physik, KIT.
 
 
 
-	% Contents
-	\MainMatter
+    % Contents
+    \MainMatter
 
-	\chapter{Einleitung}
-	\input{./chap/chapter1.tex}
-	\chapter{Über LaTeX}
-	\input{./chap/chapter2.tex}
-	\chapter{Über diese LaTeX-Vorlage}
-	\input{./chap/chapter3.tex}
-	\chapter{Nützliche Befehle}
-	\input{./chap/chapter4.tex}
+    \chapter{Einleitung}
+    \input{./chap/chapter1.tex}
+    \chapter{Über LaTeX}
+    \input{./chap/chapter2.tex}
+    \chapter{Über diese LaTeX-Vorlage}
+    \input{./chap/chapter3.tex}
+    \chapter{Nützliche Befehle}
+    \input{./chap/chapter4.tex}
 
-	% Anhang für mehr oder weniger interessante Rechnungen etc.
-	%\Appendix
-	%\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % damit der Anhang im ToC ohne Nummer erscheint. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
-	%\input{./chap/appendix.tex}
+    % appendix for more or less interesting calculations
+    \Appendix
+    \chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
+    % to make the appendix appear in ToC without number. \appendixname = 
+    % Appendix or Anhang (depending on chosen language)
+    %\input{./chap/appendix.tex} %\cleardoublepage
 
 
 
-	% Bibliography
-	\TheBibliography
+    % Bibliography
+    \TheBibliography
 
-	% BIBTEX
-	% use if you want citations to appear even if they are not referenced to: \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
-	%\nocite{*}
-	\bibliographystyle{babalpha}
-	\bibliography{lit.bib}
+    % BIBTEX
+    % use if you want citations to appear even if they are not referenced to: 
+    % \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
+    %\nocite{*}
+    \bibliographystyle{babalpha}
+    \bibliography{lit.bib}
 
-	% THEBIBLIOGRAPHY
-	%\begin{thebibliography}{000}
-	%	\bibitem{ident}Entry into Bibliography.
-	%\end{thebibliography}
+    % THEBIBLIOGRAPHY
+    %\begin{thebibliography}{000}
+    %    \bibitem{ident}Entry into Bibliography.
+    %\end{thebibliography}
 \end{document}
