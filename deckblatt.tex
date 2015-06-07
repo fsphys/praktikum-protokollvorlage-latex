@@ -1,5 +1,6 @@
 \documentclass{include/protokollclass}
 % Main File - Based on protokollclass.cls
+% DIES IST EINE REDUZIERTE VERSION DER VORLAGE, UM EIN LEERES DECKBLATT ZU ERZEUGEN
 % ---------------------------------------------------------------------------------------
 % Further files in folder :
 %  - include/cmds.tex (for macros and additional commands)
@@ -8,10 +9,6 @@
 %  - lit.bib (bibtex bibliography database)
 %  - include/titlepage.tex (for layout of titelpage)
 % ---------------------------------------------------------------------------------------
-% Useful Supplied Packages:
-% amsmath, amssymb, mathtools, bbm, upgreek, nicefrac,
-% siunitx, varioref, booktabs, graphicx, tikz, multicol
-% DIES IST EINE REDUZIERTE VERSION DER VORLAGE, UM EIN LEERES DECKBLATT ZU ERZEUGEN
 
 
 
@@ -34,14 +31,15 @@
 %% |    Main Document     |
 %% ------------------------
 \begin{document}
-	% PDF setup
-	\hypersetup
-	{
-		pdfauthor={Fakultät für Physik, KIT},
-		pdftitle={Deckblatt zum Anfängerpraktikum},
-		pdfsubject={Deckblatt für Versuchsprotokolle der physikalischen Anfängerpraktika der Fakultät für Physik, KIT.},
-		pdfkeywords={kit,physik,praktikum,protokoll}
-	}
-	
-	\input{include/titlepage}
+    % PDF setup
+    \hypersetup
+    {
+        pdfauthor={Fakultät für Physik, KIT},
+        pdftitle={Deckblatt zum Anfängerpraktikum},
+        pdfsubject={Deckblatt für Versuchsprotokolle der physikalischen 
+Anfängerpraktika der Fakultät für Physik, KIT.},
+        pdfkeywords={kit,physik,praktikum,protokoll}
+    }
+    
+    \input{include/titlepage}
 \end{document}
