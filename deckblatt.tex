@@ -1,26 +1,48 @@
 \documentclass{include/protokollclass}
 % Main File - Based on protokollclass.cls
-% DIES IST EINE REDUZIERTE VERSION DER VORLAGE, UM EIN LEERES DECKBLATT ZU ERZEUGEN
-% ---------------------------------------------------------------------------------------
+% DIES IST EINE REDUZIERTE VERSION DER VORLAGE, FÜR EIN LEERES DECKBLATT
+% ------------------------------------------------------------------------------
 % Further files in folder :
 %  - include/cmds.tex (for macros and additional commands)
-%  - data.tex (für Angaben zum Praktikumsprotokoll)
 %  - include/kitlogo.pdf (for titlepage)
 %  - lit.bib (bibtex bibliography database)
 %  - include/titlepage.tex (for layout of titelpage)
-% ---------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 
 
 
 
 
-% um die Titelseite per PDF-reader auszufüllen. Vorgefertigte Daten können unter 'misc/data.tex' modifiziert werden.
+%% ---------------------------------------------
+%% |    Informationen über dieses Protokoll    |
+%% ---------------------------------------------
+\newcommand{\praktikum}{}
+\newcommand{\semester}{}
+
+\newcommand{\wochentag}{}
+\newcommand{\gruppennr}{}
+
+\newcommand{\nachnamea}{}
+\newcommand{\vornamea}{}
+\newcommand{\nachnameb}{}
+\newcommand{\vornameb}{}
+
+\newcommand{\emailadressen}{}
+
+\newcommand{\versuch}{}
+\newcommand{\versuchsnr}{}
+\newcommand{\fehlerrechnung}{}
+
+\newcommand{\betreuer}{}
+\newcommand{\durchgefuehrt}{}
+
+
+
+
+
 \setboolean{forminput}{true}
-% um die Anmerkungen zu den Textfeldern anzeigen zu lassen
 \setboolean{showannotations}{true}
-% um das Ausfüllen der Textfelder zu verhindern
 \setboolean{emptytextfields}{true}
-% english oder ngerman (new german für neue deutsche Rechtschreibung statt german)
 \SelectLanguage{ngerman}
 
 
@@ -37,7 +59,7 @@
         pdfauthor={Fakultät für Physik, KIT},
         pdftitle={Deckblatt zum Anfängerpraktikum},
         pdfsubject={Deckblatt für Versuchsprotokolle der physikalischen 
-Anfängerpraktika der Fakultät für Physik, KIT.},
+                    Anfängerpraktika der Fakultät für Physik, KIT.},
         pdfkeywords={kit,physik,praktikum,protokoll}
     }
     
