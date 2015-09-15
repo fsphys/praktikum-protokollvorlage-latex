@@ -354,10 +354,10 @@
 %% |    Style of appendix and mainmatter    |
 %% ------------------------------------------
 \newboolean{chapWiseNumb}
-\setboolean{chapWiseNumb}{true}
+\setboolean{chapWiseNumb}{false}
 
 \newboolean{chapResetPageNumb}
-\setboolean{chapResetPageNumb}{true}
+\setboolean{chapResetPageNumb}{false}
 
 \newcommand{\FrontMatter}
 {
