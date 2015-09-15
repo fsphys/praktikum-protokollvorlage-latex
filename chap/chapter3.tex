@@ -1,12 +1,22 @@
-Dieses Dokument über die LaTeX-Vorlage wurde seinerseits mit der Protokollvorlage erstellt (nur das Deckblatt wurde weggelassen).
+\section{Einige Anmerkungen vorab}
+Dieses Dokument über die LaTeX-Vorlage wurde seinerseits mit der 
+Protokollvorlage erstellt (nur das Deckblatt wurde weggelassen).
 
-\section{Erläuterungen zum Aufbau der Vorlage}
-Das Praktikumsprotokoll soll auf das spätere Verfassen eines Textes als Wissenschaftler vorbereiten. Klar ist, dass das Praktikum als Lehrveranstaltung jedoch zugleich den Anspruch einer Prüfung an das Protokoll erhebt und auch eine gewisse praktische Arbeitsweise fordert (nur einige Tage Bearbeitungszeit). Richtig ist, dass man überlicherweise bestimmte Dinge, die in einem Praktikumsprotokoll gefordert werden, nicht in einem Bericht über den Aufbau eines tatsächlichen Experiments oder einer tatsächlichen wissenschaftlichen Arbeit zu finden sind. Klar ist z.B., dass das Verfassen zweier theoretischer Vorbereitungen in ein Thema innerhalb eines Dokuments vollkommen unüblich ist und dennoch für das Praktikumsprotokoll verlangt wird.
+Prinzipiell ist die Vorlage für das beidseitige Drucken gedacht.
 
-Es gibt auch andere stilistische Einschränkungen. Überlicherweise unterteilt man wissenschaftliche Berichte in Kapitel, bei denen jedes Kapitel auf einer ungeraden Seite beginnt. Bei einem 20-seitigen Praktiumsbericht handelt es sich hingegen schlicht um Papierverschwendung. Der Nutzer der LaTeX-Vorlage hat hier die freie Wahl, ob er danach verfahren möchte oder nicht (über den Befehl \verb|\cleardoublepage| am Ende eines Kapitels).
+Überlicherweise unterteilt man wissenschaftliche Berichte in Kapitel, bei denen 
+jedes Kapitel auf einer ungeraden Seite beginnt. Bei einem Praktiumsbericht von 
+ein paar wenigen Seiten handelt es sich hingegen schlicht um 
+Papierverschwendung. Standardmäßig werden daher keine leeren Seiten eingefügt. 
+Der Nutzer der LaTeX-Vorlage hat hier die freie Wahl, ob er danach verfahren 
+möchte oder nicht. Falls nicht, kann über den Befehl \verb|\cleardoublepage| am 
+Ende eines Kapitels das Neueröffnen der folgenden Kapitels auf einer ungeraden 
+Seite erzwungen werden. Mit dem Befehl \verb|\blankpage| kann sogar eine 
+komplette leere Papierseite eingefügt werden.
 
-Standardmäßig wird die Seitennummerierung in einem Kapitel stets von neuem begonnen. Dies ist nützlich, wenn mehrere Personen unabhängig an einem Dokument schreiben möchten, ohne dass zum Schluss Chaos bei der Seitennummerierung herrscht. Außerdem muss in der Mitte des Protokolls das handschriftliche Messprotokoll eingefügt werden. Diese Option zur Seitennummerierung kann jedoch auch manuell abgestellt werden. Bei der Vorlage bleibt es den Teilnehmern des Praktiums selbst überlassen, ob sie ihr Dokument nach strengen stilistischen Regeln oder eher praktisch orientiert aufbauen möchten. Auf das Erstellen eines \glqq richtigen\grqq\ Deckblatts neben dem ausfüllbaren Deckblatt für die Organisation in der Lehrveranstaltung verzichtet diese Vorlage gänzlich, wieder aus Sparsamkeit an Resourcen. Studenten, die besonderen Wert auf Vollständigkeit und Ordnung legen, können ein zusätzliches eigenes Deckblatt einrichten. Weitere Details zu den Optionen der Vorlage finden sich im entsprechenden Kapitel dieses Dokuments.
-
+Standardmäßig ist die Seitennummerierung fortlaufend. Es gibt zwei zusätzliche 
+Optionen, die eine kapitelweise Nummerierung, bzw. einen Neubeginn der 
+Seitenzahl mit jedem Kapite ermöglichen. Mehr dazu weiter unten.
 
 
 \section{Die TeXnische Umsetzung}
@@ -20,33 +30,108 @@ Die Datei \verb|main.tex| muss mit PDFLaTeX kompiliert werden, um die druckbare 
 	pdflatex main.tex
 \end{verbatim}
 
-Falls die LaTeX-Zwischendateien (*.aux, *.toc, *.out, etc.) vorhanden sind, reicht für kleine Ändernungen in der Regel ein Durchlauf von PDFLaTeX. Viele Editoren entscheiden selbst, wie häufig womit kompiliert werden muss. Es reicht dann eine Kompilierung mit PDFLaTeX zu befehlen.
+Falls die LaTeX-Zwischendateien (*.aux, *.toc, *.out, etc.) vorhanden sind, 
+reicht für kleine Ändernungen in der Regel ein Durchlauf von PDFLaTeX. Viele 
+Editoren entscheiden selbst, wie häufig womit kompiliert werden muss. Es reicht 
+dann eine Kompilierung mit PDFLaTeX zu befehlen.
 
 \subsection{Aufbau}
-In der Datei \verb|main.tex| werden alle Einstellungen am Dokument und die eingebundenen Kapitel definiert. Die Datei basiert auf einer speziell für das Praktikum angelegten Dokumentenklasse, die sich im Ordner \verb|include/| mit dem Namen \verb|protokollclass.cls| befindet. Diese definiert das Layout des Protokolls.
+In der Datei \verb|main.tex| werden alle Einstellungen am Dokument und die 
+eingebundenen Kapitel definiert. Die Datei basiert auf einer speziell für das 
+Praktikum angelegten Dokumentenklasse, die sich im Ordner \verb|include/| mit 
+dem Namen \verb|protokollclass.cls| befindet. Diese definiert das Layout des 
+Protokolls.
 
-Der erste größere Block am Anfang der Datei besteht nur aus der Dokumentenklasse (\verb|\documentclass|) und einer Aufzählung der zum Dokument gehörigen Dateien sowie einiger nützlicher Pakete, die die Protokollklasse zur Verfügung stellt.
+Der erste größere Block am Anfang der Datei besteht nur aus der Dokumentenklasse 
+(\verb|\documentclass|) und einer Aufzählung der zum Dokument gehörigen Dateien 
+sowie einiger nützlicher Pakete, die die Protokollklasse zur Verfügung stellt.
 
-Der zweite Block mit der Überschrift \verb|Settings for word separation| dient dazu, LaTeX zu vermitteln, wie Wörter zu trennen sind, die LaTeX von Hause aus nicht kennt. Meist kommt LaTeX auch ohne dies klar, aber hin und wieder ergeben sich unschöne Probleme bei sehr langen Wörtern, die man lieber vermeiden möchte.
+Beim zweite Block können die Daten zum vorliegenden Protokoll eingetragen 
+werden. Die Funktion der Befehle können den Kommentaren entnommen werden.
 
-Der dritte Block beinhaltet einige auskommentierte Befehle, die bei Bedarf eingeschaltet werden können. Diese Befehle sind in der Datei kommentiert. Die letzten beiden Befehle beeinflussen die Seitennummerierung des Dokuments. Standardmäßig beginnt die Nummerierung in jedem Kapitel bei 1. Um Warnungen von LaTeX zu unterdrücken und dem Leser eine bessere Übersicht zu geben, wird dazu die Kapitelnummer vor die Seitenzahl auf jede Seite drucken zu lassen. Diese zwei Optionen lassen sich manuell abstellen, indem man die entsprechenden Werte auf \verb|false| setzt.
+Der dritte Block mit der Überschrift \verb|Settings for word separation| dient 
+dazu, LaTeX zu vermitteln, wie Wörter zu trennen sind, die LaTeX von Hause aus 
+nicht kennt. Meist kommt LaTeX auch ohne dies klar, aber hin und wieder ergeben 
+sich unschöne Probleme bei sehr langen Wörtern, die man lieber vermeiden möchte.
 
-Falls ein Protokoll auf Englisch verfasst werden soll, können vordefinierte Begriffe wie Literaturverzeichnis (Engl.: Bibliography) oder Kapitel (Engl.: Chapter) auf eine gewählte Sprache eingestellt werden. Diese Sprache wird auch im Literaturverzeichnis verwendet. Diese Einstellung erfolgt mit dem Befehl \verb|\SelectLanguage{lang}|.
+Der vierte Block beinhaltet einige auskommentierte Befehle, die bei Bedarf 
+eingeschaltet werden können. Diese Befehle sind in der Datei kommentiert. Die 
+letzten beiden Befehle beeinflussen die Seitennummerierung des Dokuments. 
+Standardmäßig ist die Seitennummerierung fortlaufend.
 
-Nach dem Befehl \verb|\begin{document}| wird der eigentliche Inhalt des Dokuments festgelegt. Zuerst werden die Titelseite eingebunden und ein Inhaltsverzeichnis erstellt. Der Befehl \verb|\FrontMatter| sagt, dass der nachfolgende Teil im PDF-Verzeichnis mit römischen Zahlen nummeriert werden soll und stellt weitere Layoutdetails ein.
+Falls ein Protokoll auf Englisch verfasst werden soll, können vordefinierte 
+Begriffe wie Literaturverzeichnis (Engl.: Bibliography) oder Kapitel (Engl.: 
+Chapter) auf eine gewählte Sprache eingestellt werden. Diese Sprache wird auch 
+im Literaturverzeichnis verwendet. Diese Einstellung erfolgt mit dem Befehl 
+\verb|\SelectLanguage{lang}|.
 
-Überlicherweise beginnt das Literaturverzeichnis eines Berichtes auf einer ungeraden Seite und die Rückseite des Deckblatts ist leer. Da nun Praktikumsprotokolle vielleicht nicht den höchsten Anspruch erheben müssen und bei den vielen Protokollen pro Jahr einiges an Papier gespart werden kann, ist es vielleicht empfehlenswert sich für die kürzere Version mit Literaturverzeichnis auf der Rückseite des Deckblatts zu entscheiden, auch wenn es normalerweise stilistisch anders gehalten wird. Eine leere Rückseite kann jederzeit mit \verb|\cleardoublepage| nach dem einbinden der Titelseite eingefügt werden.
+Nach dem Befehl \verb|\begin{document}| wird der eigentliche Inhalt des 
+Dokuments festgelegt. Zuerst werden die Titelseite eingebunden und ein 
+Inhaltsverzeichnis erstellt. Der Befehl \verb|\FrontMatter| sagt, dass der 
+nachfolgende Teil im PDF-Verzeichnis mit römischen Zahlen nummeriert werden soll 
+und stellt weitere Layoutdetails ein.
 
-Mit dem Befehl \verb|\MainMatter| werden Seitennummerierung, Layout, etc. auf den Beginn des eigentlichen Inhalts des Dokuments eingestellt. Es folgen die verschiedenen Kapitel, die mit \verb|\chapter{Kapitelname}| definiert werden. Der Inhalt wird aus \verb|.tex|-Dateien mit Hilfe von \verb|\input{...}| eingelesen. Auch hier können Kapitel wieder auf geraden sowie auf ungeraden Seiten eröffnen. Wer damit nicht zufrieden ist, kann mit \verb|\cleardoublepage| nach dem \verb|\input|-Befehl nachhelfen.
+Überlicherweise beginnt das Literaturverzeichnis eines Berichtes auf einer 
+ungeraden Seite und die Rückseite des Deckblatts ist leer. Da nun 
+Praktikumsprotokolle vielleicht nicht den höchsten Anspruch erheben müssen und 
+bei den vielen Protokollen pro Jahr einiges an Papier gespart werden kann, ist 
+es vielleicht empfehlenswert sich für die kürzere Version mit 
+Literaturverzeichnis auf der Rückseite des Deckblatts zu entscheiden, auch wenn 
+es normalerweise stilistisch anders gehalten wird. Eine leere Rückseite kann 
+jederzeit mit \verb|\cleardoublepage| nach dem einbinden der Titelseite 
+eingefügt werden.
 
-Der Anhang dürfte für die meisten Protokolle nicht notwendig sein, man kann ihn jedoch sehr leicht erzeugen. \verb|\Appendix| stellt wieder das Layout um und die nachfolgenden Befehle erzeugen ein unnummeriertes Kapitel \textit{Anhang}, welches wieder über \verb|\input{...}| eingebunden wird.
+Mit dem Befehl \verb|\MainMatter| werden Seitennummerierung, Layout, etc. auf 
+den Beginn des eigentlichen Inhalts des Dokuments eingestellt. Es folgen die 
+verschiedenen Kapitel, die mit \verb|\chapter{Kapitelname}| definiert werden. 
+Der Inhalt wird aus \verb|.tex|-Dateien mit Hilfe von \verb|\input{...}| 
+eingelesen. Auch hier können Kapitel wieder auf geraden sowie auf ungeraden 
+Seiten eröffnen. Wer damit nicht zufrieden ist, kann mit \verb|\cleardoublepage| 
+nach dem \verb|\input|-Befehl nachhelfen.
 
-Mit dem Literaturverzeichnis tun sich viele Studenten im Praktikum schwer, da das meiste ohnehin nur aus der Vorbereitungsmappe stammt. Dennoch stellt die Vorlage sowohl ein einfaches \verb|\TheBibliography|- sowie ein umfangreiches Bibtex-Literaturverzeichnis zur Verfügung. Der Befehl \verb|\TheBibliography| dient wieder zum Verstellen des Layouts. (Achtung: die Namensgebung ist irreführend! Dieser Befehl hat nichts der eigentlichen \verb|thebibliography|-Umgebung zu tun.) Danach kann man entweder mithilfe von Bibtex über den Befehl \verb|\bibliography{file.bib}| ein Literaturverzeichnis erzeugen. Die Datenbank muss dabei im Bibtex-Format in der Datei \verb|file.bib| vorliegen. Ein Beispiel befindet sich in der Datei \verb|lit.bib|. Das Layout des Literaturverzeichnisses legt man über den Befehl \verb|\bibliographystyle{style}| fest. In dieser Vorlage wird der Stil \verb|babalpha| verwendet. Es können auch alle weiteren kompatiblen Stile verwendet werden. Eine Einführung in die verschiednen Zitierstile erfolgt  hier nicht. Weitere kompatible Babelbib-Style kann man online suchen. Alternativ zum Bibtex-Literaturverzeichnis kann man ein simpleres Literaturverzeichnis mit dem Befehl \verb|\TheBibliography| erstellen, welcher von Hause aus mit LaTeX kommt. Die Syntax ist im Dokument erläutert.
+Der Anhang dürfte für die meisten Protokolle nicht notwendig sein, man kann ihn 
+jedoch sehr leicht erzeugen. \verb|\Appendix| stellt wieder das Layout um und 
+die nachfolgenden Befehle erzeugen ein unnummeriertes Kapitel \textit{Anhang}, 
+welches wieder über \verb|\input{...}| eingebunden wird.
+
+Mit dem Literaturverzeichnis tun sich viele Studenten im Praktikum schwer, da 
+das meiste ohnehin nur aus der Vorbereitungsmappe stammt. Dennoch stellt die 
+Vorlage sowohl ein einfaches \verb|\TheBibliography|- sowie ein umfangreiches 
+Bibtex-Literaturverzeichnis zur Verfügung. Der Befehl \verb|\TheBibliography| 
+dient wieder zum Verstellen des Layouts. (Achtung: die Namensgebung ist 
+irreführend! Dieser Befehl hat nichts der eigentlichen 
+\verb|thebibliography|-Umgebung zu tun.) Danach kann man entweder mithilfe von 
+Bibtex über den Befehl \verb|\bibliography{file.bib}| ein Literaturverzeichnis 
+erzeugen. Die Datenbank muss dabei im Bibtex-Format in der Datei \verb|file.bib| 
+vorliegen. Ein Beispiel befindet sich in der Datei \verb|lit.bib|. Das Layout 
+des Literaturverzeichnisses legt man über den Befehl 
+\verb|\bibliographystyle{style}| fest. In dieser Vorlage wird der Stil 
+\verb|babalpha| verwendet. Es können auch alle weiteren kompatiblen Stile 
+verwendet werden. Eine Einführung in die verschiednen Zitierstile erfolgt  hier 
+nicht. Weitere kompatible Babelbib-Style kann man online suchen. Alternativ zum 
+Bibtex-Literaturverzeichnis kann man ein simpleres Literaturverzeichnis mit dem 
+Befehl \verb|\TheBibliography| erstellen, welcher von Hause aus mit LaTeX kommt. 
+Die Syntax ist im Dokument erläutert.
 
 \subsection{Weitere Dateien}
-Die Daten zum Dokument, die auf dem Deckblatt angezeigt und in den Metadaten der PDF-Datei gespeichert werden, können über die Datei \verb|data.tex| verändert werden. Einige Kurzbefehle wurden in der Datei \verb|include/cmds.tex| angelegt, weitere können hier nach Belieben hinzugefügt werden. Die Datei \verb|titelpage.tex| selbst sollte aus organisatorischen Gründen nach Möglichkeit nicht bearbeitet werden, damit das Layout der Titelseite für alle abgegebenen Protokolle der verschiedenen Gruppen gleich bleibt. Die Inhalte können, wie erwähnt, über die Einträge in der Datei \verb|data.tex| angepasst werden.
+Einige Kurzbefehle wurden in der Datei \verb|include/cmds.tex| 
+angelegt, weitere können hier nach Belieben hinzugefügt werden. Die Datei 
+\verb|titelpage.tex| selbst sollte aus organisatorischen Gründen nach 
+Möglichkeit nicht bearbeitet werden, damit das Layout der Titelseite für alle 
+abgegebenen Protokolle der verschiedenen Gruppen gleich bleibt. Die Inhalte 
+können, wie erwähnt, über die Einträge am Anfang der Datei \verb|main.tex| 
+angepasst werden.
 
-Bilder und Tabellen können natürlich von überall aus eingebunden werden, aber es empfiehlt sich aus Gründen der Übersicht, für diese Dateien ebenfalls Unterordner anzulegen. Häufig verwendet man die Bezeichnungen \verb|fig| für den Unterordner mit den Abbildungen und \verb|tab| für den Unterordner mit den Tabellen.
+Bilder und Tabellen können natürlich von überall aus eingebunden werden, aber 
+es empfiehlt sich aus Gründen der Übersicht, für diese Dateien ebenfalls 
+Unterordner anzulegen. Häufig verwendet man die Bezeichnungen \verb|fig| für den 
+Unterordner mit den Abbildungen und \verb|tab| für den Unterordner mit den 
+Tabellen.
+
+Die Dateien \verb|LICENSE| und \verb|README.md| wird für die Vorlage nicht 
+benötigt. Die Makefile kann von \verb|make| verwendet werden, um die PDFs zu 
+kompilieren. Wer einen LaTeX-Editor benutzt, braucht diese Datei ebenfalls 
+nicht.
 
 
 
