@@ -203,7 +203,7 @@
 \parindent 0cm                        % do not indent beginning of paragraph
 \parskip 1.5ex plus0.5ex minus0.5ex   % Margin between paragraphs
 
-\newcommand{\blankpage}{\clearpage{\pagestyle{empty}\cleardoublepage}}
+\newcommand{\blankpage}{\clearpage{\pagestyle{empty}\clearpage}}
 
 
 
