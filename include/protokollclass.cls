@@ -151,12 +151,13 @@
 %% ----------------------
 %% |    Declarations    |
 %% ----------------------
-\input{include/cmds}
-\input{data}
-\newcommand{\namea}{\vornamea\ \nachnamea}
-\newcommand{\nameb}{\vornameb\ \nachnameb}
-\StrRight{\praktikum}{1}[\praktikumteil]
-
+\AtBeginDocument % need definitions from main.tex file first
+{
+    \input{include/cmds}
+    \newcommand{\namea}{\vornamea\ \nachnamea}
+    \newcommand{\nameb}{\vornameb\ \nachnameb}
+    \StrRight{\praktikum}{1}[\praktikumteil]
+}
 
 
 
@@ -166,16 +167,20 @@
 %% ---------------------
 % This information will appear embed into the PDF file as meta data, but will 
 % not be printed anywhere
-\hypersetup
+\AtBeginDocument
 {
-    pdfauthor={\namea, \nameb},
-    pdftitle={Praktikumsprotokoll zum Versuch \versuch},
-    pdfsubject={Praktikumsprotokoll zum Versuch%
-                \versuch~(\praktikum-\versuchsnr) des physikalischen%
-                Anfängerpraktikums Teil \praktikumteil\ der Fakultät für%
-                Physik, \semester, KIT. Versuchsgruppe: \wochentag-\gruppennr},
-    pdfkeywords={kit,physik,praktikum,protokoll,%
-                 \versuch,\nachnamea,\nachnameb}
+    \hypersetup
+    {
+        pdfauthor={\namea, \nameb},
+        pdftitle={Praktikumsprotokoll zum Versuch \versuch},
+        pdfsubject={Praktikumsprotokoll zum Versuch%
+                    \versuch~(\praktikum-\versuchsnr) des physikalischen%
+                    Anfängerpraktikums Teil \praktikumteil\ der Fakultät für%
+                    Physik, \semester, KIT. Versuchsgruppe: 
+                    \wochentag-\gruppennr},
+        pdfkeywords={kit,physik,praktikum,protokoll,%
+                    \versuch,\nachnamea,\nachnameb}
+    }
 }
 
 
