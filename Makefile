@@ -1,4 +1,4 @@
-.PHONY: clean pdf
+.PHONY: clean pdf clean-aux
 
 main.pdf: main.tex lit.bib $(shell find chap -type f) $(shell find fig -type f) $(shell find tab -type f) $(shell find include -type f)
 	pdflatex main.tex
@@ -11,3 +11,6 @@ pdf: main.pdf
 
 clean:
 	rm *.aux *.log *.out *.bbl *.blg *.toc *.lof *.lot *.pdf
+
+clean-aux:
+	rm *.aux *.log *.out *.bbl *.blg *.toc *.lof *.lot
