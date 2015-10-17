@@ -444,10 +444,40 @@
     }{}
 }
 
-\newcommand{\emptychapter}[2]
+\newcommand{\emptychapter}[2][]
 {
-    \clearpage\addtocounter{chapter}{1}\addtocontents{toc}{\protect\contentsline
-                           {chapter}{\protect\numberline {\thechapter}#1}{#2}{}}
+    \addtocounter{chapter}{1}
+    \addtocontents{toc}{\protect\contentsline
+        {chapter}{\protect\numberline {\thechapter}#2}{#1}{}}
+}
+
+\newcounter{tmppage}
+
+\newcommand{\pseudochapter}[2][0]
+{
+    \clearpage
+    \ifthenelse{\boolean{chapResetPageNumb}}
+    {
+        \setcounter{tmppage}{1}
+    }
+    {
+        \setcounter{tmppage}{\arabic{page}}
+    }
+    \addtocounter{chapter}{1}
+    
+    \ifthenelse{\boolean{chapWiseNumb}}
+    {
+        \addtocontents{toc}{\protect\contentsline
+            {chapter}{\protect\numberline {\thechapter}#2}
+            {\thechapter-\thetmppage}{}}
+        \clearpage
+    }
+    {
+        \addtocontents{toc}{\protect\contentsline
+            {chapter}{\protect\numberline {\thechapter}#2}{\thetmppage}{}}
+        \clearpage
+    }
+    \addtocounter{page}{#1}
 }
 
 
