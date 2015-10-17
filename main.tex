@@ -111,10 +111,12 @@
 
     % Contents
     \MainMatter
-
-    \emptychapter{Messprotokoll}{}      % usage: \emptychapter{name of the 
-                                        %        chapter}{page displayed in toc}
-
+    
+    \emptychapter[1]{Messprotokoll 1}{} % usage: \emptychapter[page displayed 
+                                        %        in toc]{name of the chapter}
+    \pseudochapter[3]{Messprotokoll 2}  % usage: \pseudochapter[number of pages 
+                                        %        added]{name of the chapter}
+    
     \chapter{Auswertung}
     \input{./chap/chapter1.tex} %\cleardoublepage
 
