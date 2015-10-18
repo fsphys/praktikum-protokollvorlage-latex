@@ -1,4 +1,4 @@
-# Protokollvorlage für das physikalische Anfängerpraktikum am KIT (v1.1.0)
+# Protokollvorlage für das physikalische Anfängerpraktikum am KIT
 
 The repository consists of three branches:
 * **master**: contains only the template.
@@ -6,6 +6,6 @@ The repository consists of three branches:
 * **readme**: contains a manual for the template (also written with the template). [View it as PDF](https://github.com/fsphys/praktikum-protokollvorlage-latex/blob/readme/main.pdf?raw=true).
 This protokoll class is strongly related to the [Thesisvorlage](https://github.com/fsphys/thesisvorlage-latex).
 
-Both, major and minor changes in the release version, will be applied to the master branch and the corresponding example and readme branches will come shipped with it. Lesser patches to stuffother than the class file and the includes may be released individually (e.g. typos in and amendment of the readme or making the example look more beautiful).
+Both, major and minor changes in the release version, will be applied to the master branch and the corresponding example and readme branches will come shipped with it. Lesser patches to stuff other than the class file and the includes may be released individually (e.g. typos in and amendment of the readme or making the example look more beautiful).
 
 For details on this template, see the [master branch](https://github.com/fsphys/praktikum-protokollvorlage-latex).
