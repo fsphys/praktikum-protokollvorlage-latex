@@ -35,6 +35,19 @@ reicht für kleine Ändernungen in der Regel ein Durchlauf von PDFLaTeX. Viele
 Editoren entscheiden selbst, wie häufig womit kompiliert werden muss. Es reicht 
 dann eine Kompilierung mit PDFLaTeX zu befehlen.
 
+Eine Alternative zu der beschriebenen Befehlsfolge ist das Programm
+\verb|latexmk|, das unabhängig vom Texteditor im Terminal verwendet
+werden kann.
+Es ist entweder mit der TeX-Distribution mitgeliefert worden, oder kann über
+die entsprechende Paketverwaltung von TeX oder dem Betriebssystem installiert
+werden.
+Im Terminal mit \verb|latexmk -pdf main.tex| aufgerufen, ermittelt es
+selbstständig, welche Befehle wie oft und in welcher Reihenfolge ausgeführt
+werden müssen.
+Mit dem zusätzlichen Parameter \verb|-pvc| läuft \verb|latexmk| ständig weiter
+und kompiliert immer neu, wenn sich eine der ins Dokument eingebundenen Dateien
+ändert: \verb|latexmk -pdf -pvc main.tex|.
+
 \subsection{Aufbau}
 In der Datei \verb|main.tex| werden alle Einstellungen am Dokument und die 
 eingebundenen Kapitel definiert. Die Datei basiert auf einer speziell für das 
