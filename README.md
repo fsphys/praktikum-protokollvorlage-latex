@@ -1,4 +1,4 @@
-# Protokollvorlage für das physikalische Anfängerpraktikum am KIT (v1.1.0)
+# Protokollvorlage für das physikalische Anfängerpraktikum am KIT
 
 The repository consists of three branches:
 * **master**: contains only the template.
@@ -22,7 +22,7 @@ Compile on the command line using <code>make main.pdf</code> or your favorite La
 
 The template is known to be compatible with TeXLive 2012 and 2014.
 
-For detailed information on using the template, see the readme pdf.
+For detailed information on using the template, see the readme pdf (main.pdf in readme branch).
 
 ## Contribute to the template
 
