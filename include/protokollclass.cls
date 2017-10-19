@@ -101,9 +101,13 @@
                 font={small,color=black},
                 labelfont=bf,
                 margin=2em]{caption}            % create graphics/
-                                                % tabular captions
-\usepackage{subfig}                         % create subcaptions
+
+% Incompatible with the implicitly included subfig   % tabular captions
+% \usepackage{subcaption}                         % create subcaptions
                                                 % for subpictures
+% Directly include subfig
+\usepackage{subfig}
+
 
 \usepackage[absolute,overlay]{textpos}          % used for titlepage
 \usepackage{tikz}                               % used for titlepage, 
